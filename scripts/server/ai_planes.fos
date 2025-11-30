@@ -1,0 +1,44 @@
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Called on some plane added.
+// Return true to allow plane, false to disallow.
+// REASON_GO_HOME
+// REASON_FOUND_IN_ENEMY_STACK   someCr as Enemy
+// REASON_FROM_DIALOG            someCr as Player
+// REASON_FROM_SCRIPT
+// REASON_RUN_AWAY
+bool npc_plane_begin( Critter& npc, NpcPlane& plane, int reason, Critter@ someCr, Item@ someItem )
+{
+    return true;
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Called on some plane added.
+// Return true to erase plane, false to wait (set this plane to next priority of planes sequence).
+// REASON_SUCCESS
+// REASON_HEX_TOO_FAR
+// REASON_HEX_BUSY
+// REASON_HEX_BUSY_RING
+// REASON_DEADLOCK
+// REASON_TRACE_FAIL
+// REASON_POSITION_NOT_FOUND
+// REASON_FIND_PATH_ERROR
+// REASON_CANT_WALK
+// REASON_TARGET_DISAPPEARED     someCr as Enemy
+// REASON_USE_ITEM_NOT_FOUND
+// REASON_GAG_CRITTER            someCr as Enemy
+// REASON_GAG_ITEM               someItem as Item
+// REASON_NO_UNARMED
+
+bool npc_plane_end( Critter& npc, NpcPlane& plane, int reason, Critter@ someCr, Item@ someItem )
+{
+	return true;
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Called on some plane runs, to manuality manage some steps.
+
+bool npc_plane_run( Critter& npc, NpcPlane& plane, int reason, uint& r0, uint& r1, uint& r2 )
+{
+	return true;
+}

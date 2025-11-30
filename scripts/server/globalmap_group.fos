@@ -1,0 +1,24 @@
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// int processType    - see in Global map events in _defines.fos;
+// Critter& cr        - who called this function, in most times is leader of group;
+// Item@ car          - group car, can be null;
+// float& curX, &curY - current position;
+// float& toX, &toY   - destination position;
+// float& speed       - speed of group, must set in GLOBAL_PROCESS_SET_MOVE,
+//                      also you can type zero to stop group;
+// uint encounterDescriptor - if encounterDescriptor != 0 than global_invite calls;
+// bool waitForAnswer       - if waitForAnswer == false then global_invite calls after this function,
+//                            else call after leader confirm invite;
+void global_process( int processType, Critter& cr, Item@ car, float& curX, float& curY, float& toX, float& toY, float& speed, uint& encounterDescriptor, bool& waitForAnswer )
+{
+	
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Call on invite to encounter.
+// If mapId != 0 then group enters to it.
+void global_invite( Critter& leader, Item@ car, uint encounterDescriptor, int combatMode, uint& mapId, uint16& hexX, uint16& hexY, uint8& dir )
+{
+	mapId = 0;
+}

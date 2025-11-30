@@ -1,0 +1,10 @@
+
+bool check_look( Map& map, Critter& fromCr, Critter& toCr )
+{
+	return true;
+}
+
+bool check_trap_look( Map& map, Critter& cr, Item& trap )
+{
+	return true;
+}

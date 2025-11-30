@@ -1,0 +1,206 @@
+
+// Called on first world generation (eg. after wipe).
+void init()
+{
+
+}
+
+// Called on server is starting.
+bool start()
+{
+	return true;
+}
+
+// Called to get starting time for world.
+void get_start_time( uint16& multiplier, uint16& year, uint16& month, uint16& day, uint16& hour, uint16& minute )
+{
+	
+}
+
+// Called on server is stopping.
+void finish()
+{
+
+}
+
+// Called on every returned value, in milliseconds.
+// Return next call in milliseconds or zero to disable loop.
+uint loop()
+{
+	return 0;
+}
+
+// Called on critter attack another.
+void critter_attack( Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponMode, ProtoItem@ ammo )
+{
+	
+}
+
+// Called on critter attack another.
+void critter_attacked( Critter& cr, Critter& attacker )
+{
+
+}
+
+// Allows/Disallows stealing from critter.
+bool critter_stealing( Critter& cr, Critter& thief, Item& item, uint count )
+{
+	return true;
+}
+
+// Called on critter use item.
+// Return true if action don't need to be processed by engine.
+bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetItem, Scenery@ targetScen, uint param )
+{
+	return false;
+}
+
+// Called on critter use skill.
+// Return true if action don't need to be processed by engine.
+bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetItem, Scenery@ targetScen )
+{
+	return false;
+}
+
+// Called on critter tries to reload weapon.
+void critter_reload_weapon( Critter& cr, Item& weapon, Item@ ammo )
+{
+
+}
+
+// Called on player register/login in game or npc created/loaded.
+// Default start position for players is center of global map.
+void critter_init( Critter& cr, bool firstTime )
+{
+
+}
+
+// Called on critter exit from game.
+void critter_finish( Critter& cr, bool toDelete )
+{
+
+}
+
+// Called every __CritterIdleTick time.
+void critter_idle( Critter& cr )
+{
+
+}
+
+// Called on critter dies.
+// Killer can be null.
+void critter_dead( Critter& cr, Critter@ killer )
+{
+
+}
+
+// Called on critter respawned.
+void critter_respawn( Critter& cr )
+{
+
+}
+
+// Allows/Disallows moving critter between maps by using grid item
+bool critter_grid_transfer( Critter& cr, Scenery& scen )
+{
+	return true;
+}
+
+// Called on critter enters map.
+void map_critter_in( Map& map, Critter& cr )
+{
+
+}
+
+// Called on critter leaves map.
+void map_critter_out( Map& map, Critter& cr )
+{
+
+}
+
+// Called on player votes for another.
+// Already checked valid positions and timeout.
+void karma_voting( Critter& crFrom, Critter& crTo, bool valUp )
+{
+
+}
+
+// Called on player craft some items.
+// Resources have None accessory and will be deleted after this function if not will be moved to some place.
+void items_crafted( Item@[]& items, uint[]& itemsCount, Item@[]& resources, Critter& crafter )
+{
+
+}
+
+// Levelup callback.
+void player_levelup( Critter& player, uint skillIndex, uint skillUp, uint perkIndex )
+{
+
+}
+
+// Turn based callbacks.
+// Called on every round begin, return false to disable turn-based
+void turn_based_begin( Map& map )
+{
+	
+}
+
+// Called on end of turn-based battle
+void turn_based_end( Map& map )
+{
+
+}
+
+// Called on every begin and end of turn
+void turn_based_process( Map& map, Critter& cr, bool beginTurn )
+{
+	
+}
+
+// Called when need generate turns sequence
+void turn_based_sequence( Map& map, Critter@[]& critters, Critter@ firstTurnCrit )
+{
+
+}
+
+// Called on world saving
+// Range of currentIndex: 1..9999
+void world_save( uint currentIndex, uint[]& deleteIndexes )
+{
+
+}
+
+// Called on player trying to register
+// Return true to allow, false to disallow
+bool player_registration( uint ip, string& name, uint& textMsg, uint& strNum )
+{
+	return true;
+}
+
+// Called on player trying to login
+// Return true to allow, false to disallow
+bool player_login( uint ip, string& name, uint id, uint& textMsg, uint& strNum )
+{
+	return true;
+}
+
+// Called on player trying to change access level
+// Return true to allow, false to disallow
+bool player_getaccess( Critter& player, int access, string& password )
+{
+	return true;
+}
+
+// Called on player trying to use any command to determine that it's available
+// Return true to allow, false to disallow
+bool player_allowcommand( Critter@ player, string@ adminPanel, uint8 command )
+{
+	return true;
+}
+
+// Called on map creation/loading
+bool map_init( Map& map, bool isfirst )
+{
+	map.ProccessSleep = Random( 10, 30 );
+	return true;
+}

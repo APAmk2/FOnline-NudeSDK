@@ -1,0 +1,21 @@
+#include "../headers/_utils.fosh"
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Call to determine cost of single item.
+// To allow function set __CustomItemCost to true.
+// Don't forgot specify this function in client script.
+uint item_cost( ItemMutual& item, CritterMutual& cr, CritterMutual& npc, bool sell )
+{
+	return 0;
+}
+
+#ifdef __SERVER
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Call on barter transaction.
+// Return false to cancel transaction.
+bool items_barter( Item@[]& saleItems, uint[]& saleItemsCount, Item@[]& buyItems, uint[]& buyItemsCount, Critter& player, Critter& npc )
+{
+	return true;
+}
+
+#endif // __SERVER

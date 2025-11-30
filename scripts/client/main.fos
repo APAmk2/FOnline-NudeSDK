@@ -1,0 +1,270 @@
+
+bool start()
+{
+	return true;
+}
+
+// Main loop function. Returned time of next call in milliseconds.
+uint loop()
+{
+	return 100;
+}
+
+// Say to engine what screens is active.
+void get_active_screens( int[]& result )
+{
+    
+}
+
+// Show/hide screen behaviour
+void screen_change( bool show, int screen, int p0, int p1, int p2 )
+{
+	
+}
+
+// Render interface function. You can use Draw* functions only there.
+// Layer specification:
+//    1
+// Game map
+//    2
+// Console, Messbox
+//    3
+// PopUp menu, Cursor
+//    4
+//
+// Extra layers:
+// Global map
+//    100 (over map), 101 (over all)
+void render_iface( uint layer )
+{
+	
+}
+
+// Render map function. You can use DrawMap* functions only there. This draws before 1-st iface layer.
+void render_map()
+{
+    
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Mouse behaviours. Click states look in _client_defines.fos, Mouse click states.
+// Return true to disable engine events.
+bool mouse_down( int click )
+{
+	return true;
+}
+
+bool mouse_up( int click )
+{
+	return true;
+}
+
+void mouse_move( int x, int y )
+{
+	
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Keyboard behaviours. Key codes look in _client_defines.fos DirectInput keyboard scan codes.
+// Return true to disable engine events.
+bool key_down( uint8 key, string& keyText )
+{
+	return true;
+}
+
+bool key_up( uint8 key, string& keyText )
+{
+	return true;
+}
+
+// Called on mouse/keyboard input lost (alt-tab, minimize, lost focus).
+void input_lost()
+{
+
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Called on something critter in/out game.
+void critter_in( CritterCl& cr )
+{
+
+}
+
+void critter_out( CritterCl& cr )
+{
+
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Called on something item in/changed/out map.
+void item_map_in( ItemCl& item )
+{
+
+}
+
+void item_map_changed( ItemCl& itemNow, ItemCl& itemBefore )
+{
+
+}
+
+void item_map_out( ItemCl& item )
+{
+
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Called on something critter in/out chosen inventory.
+void item_inv_in( ItemCl& item )
+{
+
+}
+
+void item_inv_out( ItemCl& item )
+{
+
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Call on receive message on map.
+// By default delay == [TextDelay + message length * 100] ms
+bool map_message( string& message, uint16& hexX, uint16& hexY, uint& color, uint& delay )
+{
+	return true;
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Call on receive message.
+// By default delay == [TextDelay + message length * 100] ms
+bool in_message( string& message, int& sayType, uint& critterId, uint& delay )
+{
+	return true;
+}
+
+// Call on send message.
+bool out_message( string& message, int& sayType )
+{
+	return true;
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// To-hit chance.
+int to_hit( CritterCl& chosen, CritterCl& target, ProtoItem& weapon, uint8 weaponMode )
+{
+	return 100;
+}
+
+// Override aim location set by player through targetting screen or simple click on target.
+void hit_aim( uint8& aim )
+{
+
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Combat results. REFACTOR - MAKE MUTUAL MODULE
+void combat_result( uint[]& data )
+{
+
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Generic description. Descriptions type look in _client_defines.fos, Generic descriptions types.
+// int& offsX, int& offsY - offsets of text, by default is zero.
+string generic_description( int descType, int& offsX, int& offsY )
+{
+	return "";
+}
+
+// Item description. Look types look in _client_defines.fos, Item look types.
+string item_description( ItemCl& item, int lookType )
+{
+	return "";
+}
+
+// Critter description. Look types look in _client_defines.fos, Critter look types.
+string critter_description( CritterCl& cr, int lookType )
+{
+	return "";
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Elevator generation.
+// Data specification:
+// 1
+// 1 start level
+// 1 levels count
+// 1 main pic
+// 2 main pic width, height
+// 1 additional pic offset
+// 2 additional pic point
+// 1 indicator animation offset in INTRFACE.LST
+// 2 indicator animation point
+// 1 button down pic offset in INTRFACE.LST
+// 1 buttons count
+// 4 rect for every button
+bool get_elevator( uint type, uint[]& data )
+{
+	return true;
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Call to determine perk aviability.
+bool check_perk( CritterCl& cr, uint perk )
+{
+	return true;
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Call to calculate registration data.
+// Input: 7 special, 3 tag skills, 2 traits, age, gender
+void player_data_generate( int[]& data )
+{
+
+}
+
+bool player_data_check( string& name, int[]& data )
+{
+    return true;
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Call on some critter action.
+void critter_action( bool localCall, CritterCl& cr, int action, int actionExt, ItemCl@ item )
+{
+
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Call before 2d animation playing.
+void animation2d_process( bool animateStay, CritterCl& cr, uint anim1, uint anim2, ItemCl@ item )
+{
+
+}
+
+// Call before 3d animation playing.
+void animation3d_process( bool animateStay, CritterCl& cr, uint anim1, uint anim2, ItemCl@ item )
+{
+
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Called on some items collection generating.
+// To force function call use RefreshItemsCollection(int collection)
+// Collection constants see in Items collections _client_defines.fos
+// If you want disable showing than just null pointer in collection
+void items_collection( int collection, ItemCl@[]& items )
+{
+
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Called on log file saving.
+void filename_logfile( string& filename )
+{
+    filename = "messagebox\\" + filename;
+}
+
+// Called on screenshot saving.
+void filename_screenshot( string& filename )
+{
+    filename = "screenshots\\" + filename;
+}

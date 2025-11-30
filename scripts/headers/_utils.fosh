@@ -1,0 +1,9 @@
+#ifdef __SERVER
+	#define ItemMutual Item
+	#define CritterMutual Critter
+#endif
+
+#ifdef __CLIENT
+	#define ItemMutual ItemCl
+	#define CritterMutual CritterCl
+#endif
