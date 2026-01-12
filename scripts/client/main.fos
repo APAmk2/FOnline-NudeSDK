@@ -1,6 +1,12 @@
+#include "../headers/_utils.fosh"
+#include "../headers/client/gui.fosh"
+
+import void InitializeGame() from "config";
 
 bool start()
 {
+	InitializeGame();
+	GUI_Init();
 	return true;
 }
 
@@ -13,13 +19,16 @@ uint loop()
 // Say to engine what screens is active.
 void get_active_screens( int[]& result )
 {
-    
+    GUI_GetActiveScreens( result );
 }
 
 // Show/hide screen behaviour
 void screen_change( bool show, int screen, int p0, int p1, int p2 )
 {
-	
+	if( show )
+        GUI_ShowScreen( screen, p0, p1, p2 );
+    else
+        GUI_HideScreen( screen, p0, p1, p2 );
 }
 
 // Render interface function. You can use Draw* functions only there.
@@ -37,7 +46,14 @@ void screen_change( bool show, int screen, int p0, int p1, int p2 )
 //    100 (over map), 101 (over all)
 void render_iface( uint layer )
 {
-	
+	if( layer == 2 )
+    {
+        GUI_Render( true );
+    }
+    else if( layer == 3 )
+    {
+        GUI_Render( false );
+    }
 }
 
 // Render map function. You can use DrawMap* functions only there. This draws before 1-st iface layer.
@@ -51,17 +67,17 @@ void render_map()
 // Return true to disable engine events.
 bool mouse_down( int click )
 {
-	return true;
+	return GUI_MouseDown( click, __MouseX, __MouseY );
 }
 
 bool mouse_up( int click )
 {
-	return true;
+	return GUI_MouseUp( click, __MouseX, __MouseY );
 }
 
 void mouse_move( int x, int y )
 {
-	
+	GUI_MouseMove( x, y );
 }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -69,18 +85,18 @@ void mouse_move( int x, int y )
 // Return true to disable engine events.
 bool key_down( uint8 key, string& keyText )
 {
-	return true;
+	return GUI_KeyDown( key, keyText );
 }
 
 bool key_up( uint8 key, string& keyText )
 {
-	return true;
+	return GUI_KeyUp( key, keyText );
 }
 
 // Called on mouse/keyboard input lost (alt-tab, minimize, lost focus).
 void input_lost()
 {
-
+	GUI_InputLost();
 }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////

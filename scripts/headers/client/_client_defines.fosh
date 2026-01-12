@@ -26,17 +26,14 @@
 #define FT_SKIPLINES( l )            ( 0x0400 | ( ( l ) << 16 ) )
 #define FT_SKIPLINES_END( l )        ( 0x0800 | ( ( l ) << 16 ) )
 
-// Mouse click types
-#define MOUSE_CLICK_LEFT          	 ( 0 )
-#define MOUSE_CLICK_RIGHT         	 ( 1 )
-#define MOUSE_CLICK_MIDDLE        	 ( 2 )
-#define MOUSE_CLICK_WHEEL_UP      	 ( 3 )
-#define MOUSE_CLICK_WHEEL_DOWN    	 ( 4 )
-#define MOUSE_CLICK_EXT0          	 ( 5 )
-#define MOUSE_CLICK_EXT1          	 ( 6 )
-#define MOUSE_CLICK_EXT2          	 ( 7 )
-#define MOUSE_CLICK_EXT3          	 ( 8 )
-#define MOUSE_CLICK_EXT4          	 ( 9 )
+// Cursors
+#define CURSOR_DEFAULT                     ( 0 )
+#define CURSOR_MOVE                        ( 1 )
+#define CURSOR_USE_OBJECT                  ( 2 )
+#define CURSOR_USE_WEAPON                  ( 3 )
+#define CURSOR_USE_SKILL                   ( 4 )
+#define CURSOR_WAIT                        ( 5 )
+#define CURSOR_HAND                        ( 6 )
 
 // Contour types
 #define CONTOUR_RED                  ( 1 )
@@ -114,5 +111,43 @@
 #define ANIM2_FALLOUT_DEAD_BURN_RUN         ( 14 )
 #define ANIM2_FALLOUT_DEAD_FRONT2           ( 15 )
 #define ANIM2_FALLOUT_DEAD_BACK2            ( 16 )
+
+// Client screen types
+#define CLIENT_SCREEN_NONE                 ( 0 ) // Used in primary, secondary and additional screen types
+// Primary screens, hardcoded
+#define CLIENT_MAIN_SCREEN_LOGIN           ( 1 )
+#define CLIENT_MAIN_SCREEN_REGISTRATION    ( 2 )
+#define CLIENT_MAIN_SCREEN_OPTIONS         ( 3 )
+#define CLIENT_MAIN_SCREEN_CREDITS         ( 4 )
+#define CLIENT_MAIN_SCREEN_GAME            ( 5 )
+#define CLIENT_MAIN_SCREEN_GLOBAL_MAP      ( 6 )
+#define CLIENT_MAIN_SCREEN_WAIT            ( 7 )
+// Secondary screens, hardcoded
+#define CLIENT_SCREEN_INVENTORY            ( 10 )
+#define CLIENT_SCREEN_PICKUP               ( 11 )
+#define CLIENT_SCREEN_MINIMAP              ( 12 )
+#define CLIENT_SCREEN_CHARACTER            ( 13 )
+#define CLIENT_SCREEN_DIALOG               ( 14 )
+#define CLIENT_SCREEN_BARTER               ( 15 )
+#define CLIENT_SCREEN_PIP_BOY              ( 16 )
+#define CLIENT_SCREEN_FIX_BOY              ( 17 )
+#define CLIENT_SCREEN_MENU                 ( 18 )
+#define CLIENT_SCREEN_AIM                  ( 19 )
+#define CLIENT_SCREEN_SPLIT                ( 20 )
+#define CLIENT_SCREEN_TIMER                ( 21 )
+#define CLIENT_SCREEN_DIALOGBOX            ( 22 )
+#define CLIENT_SCREEN_ELEVATOR             ( 23 )
+#define CLIENT_SCREEN_SAY                  ( 24 )
+#define CLIENT_SCREEN_CHA_NAME             ( 25 )
+#define CLIENT_SCREEN_CHA_AGE              ( 26 )
+#define CLIENT_SCREEN_CHA_SEX              ( 27 )
+#define CLIENT_SCREEN_GM_TOWN              ( 28 )
+#define CLIENT_SCREEN_INPUT_BOX            ( 29 )
+#define CLIENT_SCREEN_SKILLBOX             ( 30 )
+#define CLIENT_SCREEN_USE                  ( 31 )
+#define CLIENT_SCREEN_PERK                 ( 32 )
+#define CLIENT_SCREEN_TOWN_VIEW            ( 33 )
+#define CLIENT_SCREEN_SAVE_LOAD            ( 34 )
+// User screens
 
 #endif // CLIENT_DEFINES_H

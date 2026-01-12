@@ -1,3 +1,6 @@
+#include "../headers/_utils.fosh"
+
+import void InitializeGame() from "config";
 
 // Called on first world generation (eg. after wipe).
 void init()
@@ -8,6 +11,7 @@ void init()
 // Called on server is starting.
 bool start()
 {
+	InitializeGame();
 	return true;
 }
 
@@ -72,7 +76,19 @@ void critter_reload_weapon( Critter& cr, Item& weapon, Item@ ammo )
 // Default start position for players is center of global map.
 void critter_init( Critter& cr, bool firstTime )
 {
-
+	if(firstTime && cr.IsPlayer())
+	{
+		
+		Map@ startMap = GetMapByPid(1, 0);
+		if(!valid(startMap)) return;
+		cr.TransitToMap(startMap.Id, 0);
+	}
+	
+	if(cr.IsPlayer())
+	{
+		cr.ParamBase[7] = 20;
+		cr.ParamBase[72] = 20;
+	}
 }
 
 // Called on critter exit from game.

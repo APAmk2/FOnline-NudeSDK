@@ -1,12 +1,15 @@
+#include "../headers/_utils.fosh"
 
 // Called when want to check item is able to be moved
-bool critter_check_move_item( Critter& cr, Item& item, uint8 toSlot, Item@ itemSwap )
+bool critter_check_move_item( CritterMutual& cr, ItemMutual& item, uint8 toSlot, ItemMutual@ itemSwap )
 {
 	return true;
 }
 
+#ifdef __SERVER
 // Called on critter item moved
 void critter_move_item( Critter& cr, Item& item, uint8 fromSlot )
 {
 	
 }
+#endif //__SERVER

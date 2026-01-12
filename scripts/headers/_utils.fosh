@@ -1,9 +1,32 @@
+#ifndef UTILS_H
+#define UTILS_H
+
+#include "shared/_defines.fosh"
+#include "shared/_msgstr.fosh"
+#include "shared/_colors.fosh"
+#include "shared/_time.fosh"
+#include "shared/_macros.fosh"
+
 #ifdef __SERVER
 	#define ItemMutual Item
 	#define CritterMutual Critter
+	
+	#include "server/_server_defines.fosh"
 #endif
 
 #ifdef __CLIENT
 	#define ItemMutual ItemCl
 	#define CritterMutual CritterCl
+	
+	#include "client/_client_defines.fosh"
+	#include "client/_animations.fosh"
+	#include "shared/_keycodes.fosh"
 #endif
+
+#ifdef __MAPPER
+	#include "mapper/_mapper_defines.fosh"
+	#include "client/_animations.fosh"
+	#include "shared/_keycodes.fosh"
+#endif
+
+#endif // UTILS_H

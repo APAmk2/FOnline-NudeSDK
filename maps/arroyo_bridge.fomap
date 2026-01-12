@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              110
 MaxHexY              139
-WorkHexX             73
-WorkHexY             92
+WorkHexX             77
+WorkHexY             91
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -5371,12 +5371,6 @@ MapX                 78
 MapY                 108
 
 MapObjType           2
-ProtoId              4022
-MapX                 44
-MapY                 41
-Scenery_ToMapPid     2
-
-MapObjType           2
 ProtoId              2389
 MapX                 50
 MapY                 61
@@ -5520,42 +5514,6 @@ MapObjType           2
 ProtoId              2384
 MapX                 53
 MapY                 53
-
-MapObjType           2
-ProtoId              2049
-MapX                 44
-MapY                 43
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              2049
-MapX                 44
-MapY                 44
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              2049
-MapX                 44
-MapY                 45
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              2049
-MapX                 44
-MapY                 46
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              2049
-MapX                 44
-MapY                 47
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              2049
-MapX                 44
-MapY                 42
-Scenery_ToMapPid     2
 
 MapObjType           2
 ProtoId              5929
@@ -5784,18 +5742,6 @@ MapObjType           2
 ProtoId              3853
 MapX                 44
 MapY                 100
-
-MapObjType           2
-ProtoId              3853
-MapX                 45
-MapY                 60
-Scenery_ToEntire     5
-
-MapObjType           2
-ProtoId              3853
-MapX                 67
-MapY                 89
-Scenery_ToEntire     245
 
 MapObjType           2
 ProtoId              2065
@@ -6077,103 +6023,6 @@ MapObjType           2
 ProtoId              2209
 MapX                 17
 MapY                 63
-
-MapObjType           2
-ProtoId              3853
-MapX                 84
-MapY                 95
-Scenery_ToEntire     243
-
-MapObjType           2
-ProtoId              3853
-MapX                 78
-MapY                 98
-Scenery_ToEntire     243
-
-MapObjType           2
-ProtoId              3853
-MapX                 72
-MapY                 101
-Scenery_ToEntire     243
-
-MapObjType           2
-ProtoId              3853
-MapX                 66
-MapY                 104
-Scenery_ToEntire     243
-
-MapObjType           2
-ProtoId              3853
-MapX                 59
-MapY                 108
-Scenery_ToEntire     243
-
-MapObjType           2
-ProtoId              3853
-MapX                 40
-MapY                 86
-Scenery_ToEntire     243
-
-MapObjType           2
-ProtoId              3853
-MapX                 84
-MapY                 84
-Scenery_ToEntire     244
-
-MapObjType           2
-ProtoId              3853
-MapX                 41
-MapY                 80
-Scenery_ToEntire     243
-
-MapObjType           2
-ProtoId              3853
-MapX                 38
-MapY                 59
-Scenery_ToEntire     243
-
-MapObjType           2
-ProtoId              3853
-MapX                 51
-MapY                 81
-Scenery_ToEntire     243
-
-MapObjType           2
-ProtoId              3853
-MapX                 48
-MapY                 95
-ScriptName           Write
-Scenery_ToEntire     243
-
-MapObjType           2
-ProtoId              3853
-MapX                 51
-MapY                 104
-Scenery_ToEntire     243
-
-MapObjType           2
-ProtoId              3853
-MapX                 42
-MapY                 66
-Scenery_ToEntire     244
-
-MapObjType           2
-ProtoId              3853
-MapX                 56
-MapY                 96
-Scenery_ToEntire     244
-
-MapObjType           2
-ProtoId              3853
-MapX                 34
-MapY                 65
-Scenery_ToEntire     243
-
-MapObjType           2
-ProtoId              3853
-MapX                 42
-MapY                 72
-Scenery_ToEntire     243
 
 MapObjType           2
 ProtoId              2067
@@ -6531,17 +6380,6 @@ MapX                 54
 MapY                 53
 ContainerUID         6
 
-MapObjType           1
-ProtoId              128
-MapX                 86
-MapY                 55
-
-MapObjType           2
-ProtoId              3853
-MapX                 50
-MapY                 88
-Scenery_ToEntire     243
-
 MapObjType           2
 ProtoId              2124
 MapX                 60
@@ -6571,12 +6409,6 @@ MapObjType           2
 ProtoId              2067
 MapX                 60
 MapY                 62
-
-MapObjType           2
-ProtoId              3853
-MapX                 90
-MapY                 92
-Scenery_ToEntire     243
 
 MapObjType           2
 ProtoId              2344
@@ -10203,14 +10035,6 @@ MapX                 31
 MapY                 85
 
 MapObjType           2
-ProtoId              2182
-MapX                 27
-MapY                 88
-ScriptName           replication_terminal
-FuncName             s_Terminal
-Scenery_CanUse       1
-
-MapObjType           2
 ProtoId              2945
 MapX                 17
 MapY                 66
@@ -10935,66 +10759,6 @@ MapObjType           2
 ProtoId              2344
 MapX                 62
 MapY                 78
-
-MapObjType           2
-ProtoId              4020
-MapX                 43
-MapY                 51
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              4022
-MapX                 44
-MapY                 45
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              4022
-MapX                 44
-MapY                 47
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              2049
-MapX                 44
-MapY                 48
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              2049
-MapX                 44
-MapY                 49
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              2049
-MapX                 44
-MapY                 50
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              2049
-MapX                 43
-MapY                 50
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              2049
-MapX                 43
-MapY                 51
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              2049
-MapX                 45
-MapY                 50
-Scenery_ToMapPid     2
-
-MapObjType           2
-ProtoId              2049
-MapX                 45
-MapY                 51
-Scenery_ToMapPid     2
 
 MapObjType           2
 ProtoId              2067

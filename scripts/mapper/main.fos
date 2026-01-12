@@ -1,0 +1,322 @@
+#include "../headers/_utils.fosh"
+
+import void InitializeGame() from "config";
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Call on new mapper instance creating.
+// Return true to handle event and close new instance or
+// return false to allow creating of new mapper instance.
+bool new_instance( string commandLine )
+{
+    return false;
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Call on mapper loaded.
+void start()
+{
+    InitializeGame();
+    InitializeTabs();
+}
+
+void InitializeTabs()
+{
+    // FAST TAB
+    TabDelete( TAB_FAST_ITEMS );
+    uint16[] pids;
+
+    TabSetItemPids( TAB_FAST_ITEMS, "002 - light", pids );
+
+    // ARMOR TAB
+    TabDelete( TAB_CUSTOM0 );
+    TabSetItemPids( TAB_CUSTOM0, "001 - Fallout 2 armor", pids );
+    TabSetItemPids( TAB_CUSTOM0, "002 - FOnline armor", pids );
+    TabSetName( TAB_CUSTOM0, "Arm" );
+
+    // DRUGS TAB
+    TabDelete( TAB_CUSTOM1 );
+    TabSetItemPids( TAB_CUSTOM1, "001 - Drugs", pids );
+    TabSetName( TAB_CUSTOM1, "Drg" );
+
+    // WEAPON TAB
+    TabDelete( TAB_CUSTOM2 );
+    TabSetItemPids( TAB_CUSTOM2, "001 - Fallout 2 weapons", pids );
+    TabSetItemPids( TAB_CUSTOM2, "002 - FOnline weapons", pids );
+    TabSetName( TAB_CUSTOM2, "Wpn" );
+
+    // AMMO TAB
+    TabDelete( TAB_CUSTOM3 );
+    TabSetItemPids( TAB_CUSTOM3, "001 - Ammo", pids );
+    TabSetName( TAB_CUSTOM3, "Amm" );
+
+    // MSC TAB
+    TabDelete( TAB_CUSTOM4 );
+    TabSetItemPids( TAB_CUSTOM4, "001 - Misc", pids );
+    TabSetItemPids( TAB_CUSTOM4, "002 - E. barriers", pids );
+    TabSetName( TAB_CUSTOM4, "Msc" );
+
+    // MSC2 TAB
+    TabDelete( TAB_CUSTOM5 );
+    // Key
+    TabSetItemPids( TAB_CUSTOM5, "001 - keys", pids );
+
+    // Msc2 items
+    TabSetItemPids( TAB_CUSTOM5, "002 - Msc2", pids );
+
+    // custom
+    TabSetItemPids( TAB_CUSTOM5, "003 - rifleman", pids );
+
+    // Cars
+    TabSetItemPids( TAB_CUSTOM5, "003 - cars", pids );
+
+    // Etc.
+    TabSetItemPids( TAB_CUSTOM5, "004 - etc.", pids );
+    TabSetName( TAB_CUSTOM5, "Msc2" );
+
+    // CONTAINERS AND DOORS TAB
+    TabDelete( TAB_CUSTOM6 );
+
+    // Containers
+    TabSetItemPids( TAB_CUSTOM6, "001 - Containers", pids );
+
+    // Door
+    TabSetItemPids( TAB_CUSTOM6, "002 - Doors", pids );
+    TabSetName( TAB_CUSTOM6, "C/D" );
+
+    // GRIDS TAB
+    TabDelete( TAB_CUSTOM7 );
+
+    // Scenery
+    TabSetItemPids( TAB_CUSTOM7, "001 - ladders", pids );
+
+    // Grids
+    TabSetItemPids( TAB_CUSTOM7, "002 - exit grids", pids );
+    TabSetName( TAB_CUSTOM7, "Grd" );
+
+    // GENERIC SCENERY TAB
+    TabDelete( TAB_CUSTOM8 );
+    TabSetName( TAB_CUSTOM8, "Gen" );
+
+    // WALLS TAB
+    TabDelete( TAB_CUSTOM9 );
+    TabSetItemPids( TAB_CUSTOM9, "001 - Vault 13", pids );
+    TabSetName( TAB_CUSTOM9, "Wall" );
+
+    // Tactics tiles, tiles_0.bos
+    if( __GeometryType == GEOMETRY_TACTICS )
+    {
+        TabSetName( TAB_CUSTOM0, "TacT" );
+        string@[] ftTiles = { "tiles/" };
+        bool[] includeSubdirs = { true };
+        TabSetTileDirs( TAB_CUSTOM0, ftTiles, includeSubdirs );
+    }
+
+    // Arcanum tiles, arcanum2.dat
+    if( __GeometryType == GEOMETRY_ARCANUM )
+    {
+        TabSetName( TAB_CUSTOM0, "ArcT" );
+        string@[] arcanumTiles = { "art/tile/" };
+        bool[] includeSubdirs = { true };
+        TabSetTileDirs( TAB_CUSTOM0, arcanumTiles, includeSubdirs );
+    }
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Main loop function. Returned time of next call in milliseconds.
+uint loop()
+{
+    return 60000;
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Call on console message. Return true to disable engine processing.
+bool console_message( string& message )
+{
+    // Command prefixes
+    // ~ load map
+    // ^ save map
+    // @ critter animation
+    // # run script
+    // * other
+    return false;
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Render interface function. You can use Draw* functions only there.
+// Layer specification:
+//    0
+// Game map
+//    1
+// Mapper interface
+//    2
+// Console, Messbox
+//    3
+// Mapper object interface
+//    4
+// Cursor
+//    5
+void render_iface( uint layer )
+{}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Render map function. You can use DrawMap* functions only there. This drawing before 1 iface layer.
+void render_map()
+{}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Mouse behaviours. Click states look in _client_defines.fos, Mouse click states.
+// Return true to disable engine events.
+bool mouse_down( int click )
+{
+    return false;
+}
+
+bool mouse_up( int click )
+{
+    return false;
+}
+
+void mouse_move( int x, int y )
+{}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Keyboard behaviours. Key codes look in _mapper_defines.fos DirectInput keyboard scan codes.
+// Return true to disable engine events.
+bool key_down( uint8 key, string& keyText )
+{
+    return false;
+}
+
+bool key_up( uint8 key, string& keyText )
+{
+    return false;
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Called on mouse/keyboard input lost (alt-tab, minimize, lost focus).
+void input_lost()
+{}
+
+
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Some useful functions.
+// #ConvertMaps
+// #ClearTiles
+// #MapTime         value
+// #MapNoLogOut     value
+// #MapScriptModule moduleName
+// #MapScriptFunc   funcName
+
+MapperMap@ GetActiveMap()
+{
+    MapperMap@[] maps;
+    int cur = GetLoadedMaps( maps );
+    if( cur == -1 )
+        return null;
+    return maps[ cur ];
+}
+
+// Maps convertation to text format
+string ConvertMaps( string str )
+{
+    string@[] mapNames;
+    GetMapFileNames( null, mapNames );
+
+    uint success = 0;
+    uint fail = 0;
+    for( uint i = 0; i < mapNames.length(); i++ )
+    {
+        MapperMap@ map = LoadMap( mapNames[ i ], PT_SERVER_MAPS );
+        if( not (map is null) )
+        {
+            if( SaveMap( map, mapNames[ i ], PT_SERVER_MAPS ) )
+            {
+                success++;
+            }
+            else
+            {
+                Message( "Fail to save " + mapNames[ i ] );
+                fail++;
+            }
+
+            UnloadMap( map );
+        }
+        else
+        {
+            Message( "Fail to load " + mapNames[ i ] );
+            fail++;
+        }
+    }
+
+    return "Done, maps converted " + ( success + fail ) + ", success " + success + ", fail " + fail + ".";
+}
+
+// Keep only one tile per hex
+string ClearTiles( string str )
+{
+    MapperMap@ map = GetActiveMap();
+    if( map is null )
+        return "Map not loaded.";
+
+    uint deleted = 0;
+    for( uint hx = 0; hx < map.Width; hx++ )
+    {
+        for( uint hy = 0; hy < map.Height; hy++ )
+        {
+            for( ; map.GetTilesCount( hx, hy, false ) > 1; deleted++ )
+                map.DeleteTile( hx, hy, false, 0 );
+            for( ; map.GetTilesCount( hx, hy, true )  > 1; deleted++ )
+                map.DeleteTile( hx, hy, true, 0 );
+        }
+    }
+
+    return "Done. Deleted " + deleted + " tiles.";
+}
+
+// Map parameters
+string MapTime( string str )
+{
+    MapperMap@ map = GetActiveMap();
+    if( map is null )
+        return "Map not loaded.";
+    int value = 0;
+    if( not StrToInt( str, value ) )
+        return "Wrong value.";
+
+    map.Time = value;
+    return "Done. Time setted to " + map.Time + ".";
+}
+
+string MapNoLogOut( string str )
+{
+    MapperMap@ map = GetActiveMap();
+    if( map is null )
+        return "Map not loaded.";
+    int value = 0;
+    if( not StrToInt( str, value ) )
+        return "Wrong value.";
+
+    map.NoLogOut = value != 0 ? true : false;
+    return "Done. NoLogOut setted to " + map.NoLogOut + ".";
+}
+
+string MapScriptModule( string str )
+{
+    MapperMap@ map = GetActiveMap();
+    if( map is null )
+        return "Map not loaded.";
+
+    map.ScriptModule = str;
+    return "Done. ScriptModule setted to " + map.ScriptModule + ".";
+}
+
+string MapScriptFunc( string str )
+{
+    MapperMap@ map = GetActiveMap();
+    if( map is null )
+        return "Map not loaded.";
+
+    map.ScriptFunc = str;
+    return "Done. ScriptFunc setted to " + map.ScriptFunc + ".";
+}
