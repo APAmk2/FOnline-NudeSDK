@@ -1,0 +1,6 @@
+#ifndef GLOBALVARS_H
+#define GLOBALVARS_H
+
+# pragma globalvar "int  __GeometryType = 0"   // See GEOMETRY_* constants, assigned in config.fos InitializeGeometry()
+
+#endif GLOBALVARS_H

@@ -78,16 +78,11 @@ void critter_init( Critter& cr, bool firstTime )
 {
 	if(firstTime && cr.IsPlayer())
 	{
-		
+		cr.ParamBase[ST_MAX_LIFE] = 20;
+		cr.ParamBase[ST_CURRENT_HP] = 20;
 		Map@ startMap = GetMapByPid(1, 0);
 		if(!valid(startMap)) return;
 		cr.TransitToMap(startMap.Id, 0);
-	}
-	
-	if(cr.IsPlayer())
-	{
-		cr.ParamBase[7] = 20;
-		cr.ParamBase[72] = 20;
 	}
 }
 

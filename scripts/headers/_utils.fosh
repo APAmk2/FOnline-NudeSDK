@@ -1,11 +1,16 @@
 #ifndef UTILS_H
 #define UTILS_H
 
+#include "shared/_engine_defines.fosh"
+#include "shared/_globalvars.fosh"
 #include "shared/_defines.fosh"
 #include "shared/_msgstr.fosh"
+#include "shared/_math.fosh"
 #include "shared/_colors.fosh"
 #include "shared/_time.fosh"
 #include "shared/_macros.fosh"
+#include "shared/_crtypes.fosh"
+#include "shared/_itempids.fosh"
 
 #ifdef __SERVER
 	#define ItemMutual Item

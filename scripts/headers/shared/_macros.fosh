@@ -3,4 +3,9 @@
 
 #define valid                        # (ptr) ( @ptr != null )
 
+// Flags
+#define FLAG                         # ( x, flag )( ( ( x ) & ( flag ) ) != 0 )
+#define SETFLAG                      # ( x, flag )( x = ( x ) | ( flag ) )
+#define UNSETFLAG                    # ( x, flag )( x = ( ( x ) & ( ~( flag ) ) ) )
+
 #endif // MACROS_H

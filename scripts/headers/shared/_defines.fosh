@@ -1,172 +1,6 @@
 #ifndef DEFINES_H
 #define DEFINES_H
 
-// Geometry
-#define GEOMETRY_FALLOUT                         ( 0 )
-#define GEOMETRY_TACTICS                         ( 1 )
-#define GEOMETRY_ARCANUM                         ( 2 )
-
-# pragma globalvar "int  __GeometryType = 0"   // See GEOMETRY_* constants, assigned in config.fos InitializeGeometry()
-
-// ////////////////////////////////////////////////////////
-// Critter base types
-// ////////////////////////////////////////////////////////
-
-#define CRTYPE_DEFAULT_M                        ( CRTYPE_DW_JUMPSUIT_M )
-#define CRTYPE_DEFAULT_F                        ( CRTYPE_DW_JUMPSUIT_F )
-#define CRTYPE_NONE                             ( 0 ) // Used with ST_BASE_CRTYPE as default
-// Dweller
-#define CRTYPE_DW_JUMPSUIT_F                     ( 74 )
-#define CRTYPE_DW_LEATHER_ARMOR_F                ( 5 )
-#define CRTYPE_DW_LEATHER_JACKET_F               ( 6 )
-#define CRTYPE_DW_METAL_ARMOR_F                  ( 7 )
-#define CRTYPE_DW_JUMPSUIT_M                     ( 11 )
-#define CRTYPE_DW_LEATHER_ARMOR_M                ( 12 )
-#define CRTYPE_DW_LEATHER_JACKET_M               ( 13 )
-#define CRTYPE_DW_METAL_ARMOR_M                  ( 14 )
-#define CRTYPE_DW_TRIBAL_F                       ( 63 )
-#define CRTYPE_DW_TRIBAL_M                       ( 64 )
-#define CRTYPE_DW_METAL_ARMOR_MK2_F              ( 121 )
-#define CRTYPE_DW_METAL_ARMOR_MK2_M              ( 122 )
-#define CRTYPE_DW_LEATHER_ARMOR_MK2_F            ( 123 )
-#define CRTYPE_DW_LEATHER_ARMOR_MK2_M            ( 124 )
-#define CRTYPE_DW_TESLA_ARMOR_F                  ( 126 )
-#define CRTYPE_DW_TESLA_ARMOR_M                  ( 127 )
-// Vault citizen
-#define CRTYPE_VAULT_M                           ( 69 )
-#define CRTYPE_VAULT_F                           ( 74 )
-// Robots
-#define CRTYPE_ROBOT                             ( 66 )
-// Long Hair Dude
-#define CRTYPE_LHD_JUMPSUIT                      ( 106 ) // Used with ST_BASE_CRTYPE
-#define CRTYPE_LHD_LEATHER_ARMOR                 ( 107 )
-#define CRTYPE_LHD_LEATHER_JACKET                ( 108 )
-#define CRTYPE_LHD_METAL_ARMOR                   ( 109 )
-#define CRTYPE_LHD_LEATHER_ARMOR_MK2             ( 142 )
-#define CRTYPE_LHD_METAL_ARMOR_MK2               ( 143 )
-#define CRTYPE_LHD_TESLA_ARMOR                   ( 144 )
-// Long Hair Skin Redirects
-#define CRTYPE_LHD_SKIN1                         ( 45 )
-#define CRTYPE_LHD_SKIN2                         ( 107 )
-#define CRTYPE_LHD_SKIN3                         ( 108 )
-#define CRTYPE_LHD_SKIN4                         ( 110 )
-#define CRTYPE_LHD_SKIN5                         ( 140 )
-#define CRTYPE_LHD_SKIN6                         ( 141 )
-#define CRTYPE_LHD_SKIN7                         ( 142 )
-#define CRTYPE_LHD_SKIN8                         ( 95 )
-// Bald Dude
-#define CRTYPE_BD_JUMPSUIT                       ( 163 ) // Used with ST_BASE_CRTYPE
-#define CRTYPE_BD_LEATHER_ARMOR                  ( 130 )
-#define CRTYPE_BD_LEATHER_JACKET                 ( 125 )
-#define CRTYPE_BD_METAL_ARMOR                    ( 133 )
-#define CRTYPE_BD_LEATHER_ARMOR_MK2              ( 131 )
-#define CRTYPE_BD_METAL_ARMOR_MK2                ( 132 )
-#define CRTYPE_BD_TESLA_ARMOR                    ( 134 )
-// Bald Dude Skin Redirects
-#define CRTYPE_BD_SKIN1                          ( 41 )
-#define CRTYPE_BD_SKIN2                          ( 44 )
-#define CRTYPE_BD_SKIN3                          ( 57 )
-#define CRTYPE_BD_SKIN4                          ( 91 )
-#define CRTYPE_BD_SKIN5                          ( 125 )
-#define CRTYPE_BD_SKIN6                          ( 130 )
-#define CRTYPE_BD_SKIN7                          ( 131 )
-#define CRTYPE_BD_SKIN8                          ( 135 )
-#define CRTYPE_BD_SKIN9                          ( 136 )
-#define CRTYPE_BD_SKIN10                         ( 137 )
-#define CRTYPE_BD_SKIN11                         ( 138 )
-#define CRTYPE_BD_SKIN12                         ( 43 )
-#define CRTYPE_BD_SKIN13                         ( 89 )
-#define CRTYPE_BD_SKIN14                         ( 98 )
-// Mutant
-#define CRTYPE_MUTANT_REGULAR                    ( 21 )
-#define CRTYPE_MUTANT_LEATHER                    ( 20 )
-#define CRTYPE_MUTANT_METAL                      ( 49 )
-// Mobs
-#define CRTYPE_RAT                               ( 24 )
-#define CRTYPE_MOLESKIN_RAT_BIG                  ( 19 )
-#define CRTYPE_BRAHMIN                           ( 15 )
-// Other
-#define CRTYPE_VAULT_BOY                         ( 249 )
-// 3d critters
-#define CRTYPE_3D_MALE_NORMAL                    ( 290 )
-#define CRTYPE_3D_MALE_WIRY                      ( 291 )
-#define CRTYPE_3D_MALE_STRONG                    ( 292 )
-#define CRTYPE_3D_MALE_FAT                       ( 293 )
-#define CRTYPE_3D_MALE_SKELETON                  ( 294 )
-#define CRTYPE_3D_FEMALE_NORMAL                  ( 295 )
-#define CRTYPE_3D_FEMALE_WIRY                    ( 296 )
-#define CRTYPE_3D_FEMALE_STRONG                  ( 297 )
-#define CRTYPE_3D_FEMALE_FAT                     ( 298 )
-#define CRTYPE_3D_FEMALE_SKELETON                ( 299 )
-#define CRTYPE_3D_ANT                            ( 300 )
-#define CRTYPE_3D_ANT_QUEEN                      ( 301 )
-#define CRTYPE_3D_BAT                            ( 302 )
-#define CRTYPE_3D_BEETLE                         ( 303 )
-#define CRTYPE_3D_CENTIPEDE                      ( 304 )
-#define CRTYPE_3D_COUGAR                         ( 305 )
-#define CRTYPE_3D_COW                            ( 306 )
-#define CRTYPE_3D_DEATHCLAW                      ( 307 )
-#define CRTYPE_3D_DESERT_STALKER                 ( 308 )
-#define CRTYPE_3D_DOG                            ( 309 )
-#define CRTYPE_3D_GILA                           ( 310 )
-#define CRTYPE_3D_MANTRAP                        ( 311 )
-#define CRTYPE_3D_RAD_TOAD                       ( 312 )
-#define CRTYPE_3D_RAT                            ( 313 )
-#define CRTYPE_3D_THORN_SLINGER                  ( 314 )
-#define CRTYPE_3D_WASP_GIANT                     ( 315 )
-#define CRTYPE_3D_WEEDLING                       ( 316 )
-// Tactics
-#define CRTYPE_TACTICS_RHUMANOID                 ( 460 )
-// Arcanum
-#define CRTYPE_ARCANUM_GEN_CR_BEGIN              ( 600 )
-#define CRTYPE_ARCANUM_GEN_CR_END                ( 699 )
-
-// ////////////////////////////////////////////////////////
-// File paths
-// ////////////////////////////////////////////////////////
-
-// Client and mapper paths
-#define PT_ROOT                                  ( 0 )
-#define PT_DATA                                  ( 1 )
-#define PT_ART                                   ( 2 )
-#define PT_ART_CRITTERS                          ( 3 )
-#define PT_ART_INTRFACE                          ( 4 )
-#define PT_ART_INVEN                             ( 5 )
-#define PT_ART_ITEMS                             ( 6 )
-#define PT_ART_MISC                              ( 7 )
-#define PT_ART_SCENERY                           ( 8 )
-#define PT_ART_SKILLDEX                          ( 9 )
-#define PT_ART_SPLASH                            ( 10 )
-#define PT_ART_TILES                             ( 11 )
-#define PT_ART_WALLS                             ( 12 )
-#define PT_TEXTURES                              ( 13 )
-#define PT_EFFECTS                               ( 14 )
-#define PT_SND_MUSIC                             ( 16 )
-#define PT_SND_SFX                               ( 17 )
-#define PT_SCRIPTS                               ( 18 )
-#define PT_VIDEO                                 ( 19 )
-#define PT_TEXTS                                 ( 20 )
-#define PT_SAVE                                  ( 21 )
-#define PT_FONTS                                 ( 22 )
-#define PT_CACHE                                 ( 23 )
-
-// Server paths
-#define PT_SERVER_ROOT                           ( 30 )
-#define PT_SERVER_DATA                           ( 31 )
-#define PT_SERVER_TEXTS                          ( 32 )
-#define PT_SERVER_DIALOGS                        ( 33 )
-#define PT_SERVER_MAPS                           ( 34 )
-#define PT_SERVER_PRO_ITEMS                      ( 35 )
-#define PT_SERVER_PRO_CRITTERS                   ( 36 )
-#define PT_SERVER_SCRIPTS                        ( 37 )
-#define PT_SERVER_SAVE                           ( 38 )
-#define PT_SERVER_CLIENTS                        ( 39 )
-#define PT_SERVER_BANS                           ( 40 )
-
-// Other
-#define PT_MAPPER_ROOT                           ( 45 )
-#define PT_MAPPER_DATA                           ( 46 )
-
 // Look checks
 #define LOOK_CHECK_DIR                           ( 0x01 ) // Nerfe look by directions of look
 #define LOOK_CHECK_SNEAK_DIR                     ( 0x02 ) // Nerfe opponent sneak by directions of look
@@ -175,7 +9,167 @@
 #define LOOK_CHECK_SCRIPT                        ( 0x10 ) // Allow bool check_look(...) in main.fos, all other defines ignored
 #define LOOK_CHECK_ITEM_SCRIPT                   ( 0x20 ) // Allow bool check_trap_look(...) in main.fos, for items with ITEM_TRAP flag
 
-#define TRAIT_BEGIN                              ( __TraitBegin )
-#define TRAIT_END                                ( __TraitEnd )
+// Generic
+#define WORLD_START_TIME             "07:00 30:10:2246 x00"
+#define MAX_FOPATH                   UTF8_BUF_SIZE( 1024 )
+#define CRAFT_SEND_TIME              ( 60000 )
+#define LEXEMS_SIZE                  ( 128 )
+#define MAX_HOLO_INFO                ( 250 )
+#define MAX_PARAMETERS_ARRAYS        ( 100 )
+#define AMBIENT_SOUND_TIME           ( 60000 )
+#define EFFECT_TEXTURES              ( 10 )
+#define EFFECT_SCRIPT_VALUES         ( 10 )
+#define ABC_SIZE                     ( 26 )
+#define DIRS_COUNT                   ( GameOpt.MapHexagonal ? 6 : 8 )
+#define IS_DIR_CORNER              # ( dir ) ( ( ( dir ) & 1 ) != 0 ) // 1, 3, 5, 7
+#define UTF8_BUF_SIZE              # ( count ) ( ( count ) * 4 )
+
+// Script pragma bindfield sizes
+#define PROTO_ITEM_USER_DATA_SIZE    ( 500 )
+#define CRITTER_USER_DATA_SIZE       ( 400 )
+
+// Critter Parameters
+#define ST_STRENGTH                  ( 0 )
+#define ST_PERCEPTION                ( 1 )
+#define ST_ENDURANCE				 ( 2 )
+#define ST_CHARISMA                  ( 3 )
+#define ST_INTELLECT                 ( 4 )
+#define ST_AGILITY                   ( 5 )
+#define ST_LUCK                      ( 6 )
+#define ST_MAX_LIFE                  ( 7 )
+#define ST_ACTION_POINTS             ( 8 )
+#define ST_ARMOR_CLASS               ( 9 )
+#define ST_MELEE_DAMAGE              ( 10 )
+#define ST_CARRY_WEIGHT              ( 11 )
+#define ST_SEQUENCE                  ( 12 )
+#define ST_HEALING_RATE              ( 13 )
+#define ST_CRITICAL_CHANCE           ( 14 )
+#define ST_NORMAL_RESIST             ( 23 )
+#define ST_RADIATION_RESISTANCE      ( 30 )
+#define ST_POISON_RESISTANCE         ( 31 )
+#define ST_AGE                       ( 70 )
+#define ST_GENDER                    ( 71 )
+#define ST_CURRENT_HP                ( 72 )
+#define ST_POISONING_LEVEL           ( 73 )
+#define ST_RADIATION_LEVEL           ( 74 )
+#define ST_CURRENT_AP                ( 75 )
+#define ST_EXPERIENCE                ( 76 )
+#define ST_LEVEL                     ( 77 )
+#define ST_UNSPENT_SKILL_POINTS      ( 78 )
+#define ST_UNSPENT_PERKS             ( 79 )
+#define ST_KARMA                     ( 80 )
+#define ST_FOLLOW_CRIT               ( 81 )
+#define ST_REPLICATION_MONEY         ( 82 )
+#define ST_REPLICATION_COUNT         ( 83 )
+#define ST_REPLICATION_TIME          ( 84 )
+#define ST_REPLICATION_COST          ( 85 )
+#define ST_TURN_BASED_AC             ( 86 )
+#define ST_MAX_MOVE_AP               ( 87 )
+#define ST_MOVE_AP                   ( 88 )
+#define ST_NPC_ROLE                  ( 89 )
+#define ST_BONUS_LOOK                ( 101 )
+#define ST_HANDS_ITEM_AND_MODE       ( 102 )
+#define ST_FREE_BARTER_PLAYER        ( 103 )
+#define ST_DIALOG_ID                 ( 104 )
+#define ST_AI_ID                     ( 105 )
+#define ST_TEAM_ID                   ( 106 )
+#define ST_BAG_ID                    ( 107 )
+#define ST_LAST_WEAPON_ID            ( 110 )
+#define ST_BASE_CRTYPE               ( 112 )
+#define ST_TALK_DISTANCE             ( 115 )
+#define ST_SCALE_FACTOR              ( 116 )
+#define ST_WALK_TIME                 ( 117 )
+#define ST_RUN_TIME                  ( 118 )
+#define ST_MAX_TALKERS               ( 119 )
+#define ST_ANIM3D_LAYER_BEGIN        ( 150 )
+#define ST_ANIM3D_LAYER_END          ( 179 )
+
+// Skills
+#define SK_UNARMED                   ( 203 )
+#define SK_FIRST_AID                 ( 206 )
+#define SK_DOCTOR                    ( 207 )
+#define SK_SNEAK                     ( 208 )
+#define SK_LOCKPICK                  ( 209 )
+#define SK_STEAL                     ( 210 )
+#define SK_TRAPS                     ( 211 )
+#define SK_SCIENCE                   ( 212 )
+#define SK_REPAIR                    ( 213 )
+#define SK_SPEECH                    ( 214 )
+#define SK_BARTER                    ( 215 )
+
+// Tag skills
+#define TAG_SKILL1                   ( 226 )
+#define TAG_SKILL2                   ( 227 )
+#define TAG_SKILL3                   ( 228 )
+#define TAG_SKILL4                   ( 229 )
+
+// Timeouts
+#define TO_SK_REPAIR                 ( 232 )
+#define TO_SK_SCIENCE                ( 233 )
+#define TO_BATTLE                    ( 238 )
+#define TO_TRANSFER                  ( 239 )
+#define TO_REMOVE_FROM_GAME          ( 240 )
+#define TO_KARMA_VOTING              ( 242 )
+
+// Perks
+#define PE_SILENT_RUNNING            ( 316 )
+#define PE_MASTER_TRADER             ( 318 )
+#define PE_QUICK_POCKETS             ( 349 )
+#define PE_SMOOTH_TALKER             ( 350 )
+
+// Damages
+#define DAMAGE_POISONED              ( 500 )
+#define DAMAGE_RADIATED              ( 501 )
+#define DAMAGE_RIGHT_ARM             ( 503 )
+#define DAMAGE_LEFT_ARM              ( 504 )
+#define DAMAGE_RIGHT_LEG             ( 505 )
+#define DAMAGE_LEFT_LEG              ( 506 )
+
+// Critter modes
+#define MODE_HIDE                    ( 510 )
+#define MODE_NO_STEAL                ( 511 )
+#define MODE_NO_BARTER               ( 512 )
+#define MODE_NO_ENEMY_STACK          ( 513 )
+#define MODE_NO_PVP                  ( 514 )
+#define MODE_END_COMBAT              ( 515 )
+#define MODE_DEFAULT_COMBAT          ( 516 )
+#define MODE_NO_HOME                 ( 517 )
+#define MODE_GECK                    ( 518 )
+#define MODE_NO_FAVORITE_ITEM        ( 519 )
+#define MODE_NO_ITEM_GARBAGER        ( 520 )
+#define MODE_DLG_SCRIPT_BARTER       ( 521 )
+#define MODE_UNLIMITED_AMMO          ( 522 )
+#define MODE_INVULNERABLE            ( 527 )
+#define MODE_NO_FLATTEN              ( 528 ) // Client
+#define MODE_RANGE_HTH               ( 530 )
+#define MODE_NO_LOOT                 ( 532 )
+#define MODE_NO_PUSH                 ( 536 )
+#define MODE_NO_UNARMED              ( 537 )
+#define MODE_NO_AIM                  ( 538 )
+#define MODE_NO_WALK                 ( 539 )
+#define MODE_NO_RUN                  ( 540 )
+#define MODE_NO_TALK                 ( 541 )
+// 542...543
+#define MODE_PROCESS_ON_GLOB		 ( 544 )
+
+// Entire types
+#define ENTIRE_DEFAULT               ( 0 )
+#define ENTIRE_LOG_OUT               ( 241 )
+
+// Locker
+#define LOCKER_ISOPEN                ( 0x01 )
+#define LOCKER_NOOPEN                ( 0x10 )
+
+// Geometry
+#define GEOMETRY_FALLOUT                         ( 0 )
+#define GEOMETRY_TACTICS                         ( 1 )
+#define GEOMETRY_ARCANUM                         ( 2 )
+
+// Slots
+#define SLOT_INV                     ( 0 )
+#define SLOT_HAND1                   ( 1 )
+#define SLOT_HAND2                   ( 2 )
+#define SLOT_ARMOR                   ( 3 )
+#define SLOT_GROUND                  ( 255 )
 
 #endif // DEFINES_H

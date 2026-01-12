@@ -1,0 +1,117 @@
+#ifndef CRTYPES_H
+#define CRTYPES_H
+
+// ////////////////////////////////////////////////////////
+// Critter base types
+// ////////////////////////////////////////////////////////
+
+#define CRTYPE_DEFAULT_M                        ( CRTYPE_DW_JUMPSUIT_M )
+#define CRTYPE_DEFAULT_F                        ( CRTYPE_DW_JUMPSUIT_F )
+#define CRTYPE_NONE                             ( 0 ) // Used with ST_BASE_CRTYPE as default
+// Dweller
+#define CRTYPE_DW_JUMPSUIT_F                     ( 74 )
+#define CRTYPE_DW_LEATHER_ARMOR_F                ( 5 )
+#define CRTYPE_DW_LEATHER_JACKET_F               ( 6 )
+#define CRTYPE_DW_METAL_ARMOR_F                  ( 7 )
+#define CRTYPE_DW_JUMPSUIT_M                     ( 11 )
+#define CRTYPE_DW_LEATHER_ARMOR_M                ( 12 )
+#define CRTYPE_DW_LEATHER_JACKET_M               ( 13 )
+#define CRTYPE_DW_METAL_ARMOR_M                  ( 14 )
+#define CRTYPE_DW_TRIBAL_F                       ( 63 )
+#define CRTYPE_DW_TRIBAL_M                       ( 64 )
+#define CRTYPE_DW_METAL_ARMOR_MK2_F              ( 121 )
+#define CRTYPE_DW_METAL_ARMOR_MK2_M              ( 122 )
+#define CRTYPE_DW_LEATHER_ARMOR_MK2_F            ( 123 )
+#define CRTYPE_DW_LEATHER_ARMOR_MK2_M            ( 124 )
+#define CRTYPE_DW_TESLA_ARMOR_F                  ( 126 )
+#define CRTYPE_DW_TESLA_ARMOR_M                  ( 127 )
+// Vault citizen
+#define CRTYPE_VAULT_M                           ( 69 )
+#define CRTYPE_VAULT_F                           ( 74 )
+// Robots
+#define CRTYPE_ROBOT                             ( 66 )
+// Long Hair Dude
+#define CRTYPE_LHD_JUMPSUIT                      ( 106 ) // Used with ST_BASE_CRTYPE
+#define CRTYPE_LHD_LEATHER_ARMOR                 ( 107 )
+#define CRTYPE_LHD_LEATHER_JACKET                ( 108 )
+#define CRTYPE_LHD_METAL_ARMOR                   ( 109 )
+#define CRTYPE_LHD_LEATHER_ARMOR_MK2             ( 142 )
+#define CRTYPE_LHD_METAL_ARMOR_MK2               ( 143 )
+#define CRTYPE_LHD_TESLA_ARMOR                   ( 144 )
+// Long Hair Skin Redirects
+#define CRTYPE_LHD_SKIN1                         ( 45 )
+#define CRTYPE_LHD_SKIN2                         ( 107 )
+#define CRTYPE_LHD_SKIN3                         ( 108 )
+#define CRTYPE_LHD_SKIN4                         ( 110 )
+#define CRTYPE_LHD_SKIN5                         ( 140 )
+#define CRTYPE_LHD_SKIN6                         ( 141 )
+#define CRTYPE_LHD_SKIN7                         ( 142 )
+#define CRTYPE_LHD_SKIN8                         ( 95 )
+// Bald Dude
+#define CRTYPE_BD_JUMPSUIT                       ( 163 ) // Used with ST_BASE_CRTYPE
+#define CRTYPE_BD_LEATHER_ARMOR                  ( 130 )
+#define CRTYPE_BD_LEATHER_JACKET                 ( 125 )
+#define CRTYPE_BD_METAL_ARMOR                    ( 133 )
+#define CRTYPE_BD_LEATHER_ARMOR_MK2              ( 131 )
+#define CRTYPE_BD_METAL_ARMOR_MK2                ( 132 )
+#define CRTYPE_BD_TESLA_ARMOR                    ( 134 )
+// Bald Dude Skin Redirects
+#define CRTYPE_BD_SKIN1                          ( 41 )
+#define CRTYPE_BD_SKIN2                          ( 44 )
+#define CRTYPE_BD_SKIN3                          ( 57 )
+#define CRTYPE_BD_SKIN4                          ( 91 )
+#define CRTYPE_BD_SKIN5                          ( 125 )
+#define CRTYPE_BD_SKIN6                          ( 130 )
+#define CRTYPE_BD_SKIN7                          ( 131 )
+#define CRTYPE_BD_SKIN8                          ( 135 )
+#define CRTYPE_BD_SKIN9                          ( 136 )
+#define CRTYPE_BD_SKIN10                         ( 137 )
+#define CRTYPE_BD_SKIN11                         ( 138 )
+#define CRTYPE_BD_SKIN12                         ( 43 )
+#define CRTYPE_BD_SKIN13                         ( 89 )
+#define CRTYPE_BD_SKIN14                         ( 98 )
+// Mutant
+#define CRTYPE_MUTANT_REGULAR                    ( 21 )
+#define CRTYPE_MUTANT_LEATHER                    ( 20 )
+#define CRTYPE_MUTANT_METAL                      ( 49 )
+// Mobs
+#define CRTYPE_RAT                               ( 24 )
+#define CRTYPE_MOLESKIN_RAT_BIG                  ( 19 )
+#define CRTYPE_BRAHMIN                           ( 15 )
+// Other
+#define CRTYPE_VAULT_BOY                         ( 249 )
+// 3d critters
+#define CRTYPE_3D_MALE_NORMAL                    ( 290 )
+#define CRTYPE_3D_MALE_WIRY                      ( 291 )
+#define CRTYPE_3D_MALE_STRONG                    ( 292 )
+#define CRTYPE_3D_MALE_FAT                       ( 293 )
+#define CRTYPE_3D_MALE_SKELETON                  ( 294 )
+#define CRTYPE_3D_FEMALE_NORMAL                  ( 295 )
+#define CRTYPE_3D_FEMALE_WIRY                    ( 296 )
+#define CRTYPE_3D_FEMALE_STRONG                  ( 297 )
+#define CRTYPE_3D_FEMALE_FAT                     ( 298 )
+#define CRTYPE_3D_FEMALE_SKELETON                ( 299 )
+#define CRTYPE_3D_ANT                            ( 300 )
+#define CRTYPE_3D_ANT_QUEEN                      ( 301 )
+#define CRTYPE_3D_BAT                            ( 302 )
+#define CRTYPE_3D_BEETLE                         ( 303 )
+#define CRTYPE_3D_CENTIPEDE                      ( 304 )
+#define CRTYPE_3D_COUGAR                         ( 305 )
+#define CRTYPE_3D_COW                            ( 306 )
+#define CRTYPE_3D_DEATHCLAW                      ( 307 )
+#define CRTYPE_3D_DESERT_STALKER                 ( 308 )
+#define CRTYPE_3D_DOG                            ( 309 )
+#define CRTYPE_3D_GILA                           ( 310 )
+#define CRTYPE_3D_MANTRAP                        ( 311 )
+#define CRTYPE_3D_RAD_TOAD                       ( 312 )
+#define CRTYPE_3D_RAT                            ( 313 )
+#define CRTYPE_3D_THORN_SLINGER                  ( 314 )
+#define CRTYPE_3D_WASP_GIANT                     ( 315 )
+#define CRTYPE_3D_WEEDLING                       ( 316 )
+// Tactics
+#define CRTYPE_TACTICS_RHUMANOID                 ( 460 )
+// Arcanum
+#define CRTYPE_ARCANUM_GEN_CR_BEGIN              ( 600 )
+#define CRTYPE_ARCANUM_GEN_CR_END                ( 699 )
+
+#endif // CRTYPES_H

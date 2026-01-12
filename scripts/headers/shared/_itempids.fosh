@@ -1,0 +1,18 @@
+#ifndef ITEMPIDS_H
+#define ITEMPIDS_H
+
+// Special item pids
+#define PID_SCEN_LIGHT                 ( 2141 )         // Light Source
+#define PID_SCEN_LIGHT_STOP            ( 4592 )
+#define PID_SCEN_BLOCK                 ( 2067 )         // Secret Blocking Hex
+#define PID_SCEN_IBLOCK                ( 2344 )         // Block Hex Auto Inviso
+#define PID_SCEN_TRIGGER               ( 3852 )
+#define PID_WALL_BLOCK_LIGHT           ( 5621 )         // Wall s.t. with light
+#define PID_WALL_BLOCK                 ( 5622 )         // Wall s.t.
+#define PID_GRID_EXITGRID              ( 2049 )         // Exit Grid Map Marker
+#define PID_GRID_ENTIRE                ( 3853 )
+#define PID_MISC_SCRBLOCK              ( 4012 )         // Scroll block
+#define PID_MISC_GRID_MAP            # ( pid ) ( ( pid ) >= 4016 && ( pid ) <= 4023 )
+#define PID_MISC_GRID_GM             # ( pid ) ( ( pid ) >= 4031 && ( pid ) <= 4046 )
+
+#endif // ITEMPIDS_H

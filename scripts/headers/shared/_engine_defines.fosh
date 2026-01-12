@@ -1,0 +1,609 @@
+#ifndef ENGINE_DEFINES_H
+#define ENGINE_DEFINES_H
+
+// ////////////////////////////////////////////////////////
+// File paths
+// ////////////////////////////////////////////////////////
+
+// Client and mapper paths
+#define PT_ROOT                                  ( 0 )
+#define PT_DATA                                  ( 1 )
+#define PT_ART                                   ( 2 )
+#define PT_ART_CRITTERS                          ( 3 )
+#define PT_ART_INTRFACE                          ( 4 )
+#define PT_ART_INVEN                             ( 5 )
+#define PT_ART_ITEMS                             ( 6 )
+#define PT_ART_MISC                              ( 7 )
+#define PT_ART_SCENERY                           ( 8 )
+#define PT_ART_SKILLDEX                          ( 9 )
+#define PT_ART_SPLASH                            ( 10 )
+#define PT_ART_TILES                             ( 11 )
+#define PT_ART_WALLS                             ( 12 )
+#define PT_TEXTURES                              ( 13 )
+#define PT_EFFECTS                               ( 14 )
+#define PT_SND_MUSIC                             ( 16 )
+#define PT_SND_SFX                               ( 17 )
+#define PT_SCRIPTS                               ( 18 )
+#define PT_VIDEO                                 ( 19 )
+#define PT_TEXTS                                 ( 20 )
+#define PT_SAVE                                  ( 21 )
+#define PT_FONTS                                 ( 22 )
+#define PT_CACHE                                 ( 23 )
+
+// Server paths
+#define PT_SERVER_ROOT                           ( 30 )
+#define PT_SERVER_DATA                           ( 31 )
+#define PT_SERVER_TEXTS                          ( 32 )
+#define PT_SERVER_DIALOGS                        ( 33 )
+#define PT_SERVER_MAPS                           ( 34 )
+#define PT_SERVER_PRO_ITEMS                      ( 35 )
+#define PT_SERVER_PRO_CRITTERS                   ( 36 )
+#define PT_SERVER_SCRIPTS                        ( 37 )
+#define PT_SERVER_SAVE                           ( 38 )
+#define PT_SERVER_CLIENTS                        ( 39 )
+#define PT_SERVER_BANS                           ( 40 )
+
+// Other
+#define PT_MAPPER_ROOT                           ( 45 )
+#define PT_MAPPER_DATA                           ( 46 )
+
+// Skills
+#define SKILL_BEGIN                  ( __SkillBegin )
+#define SKILL_END                    ( __SkillEnd )
+#define SKILL_COUNT                  ( SKILL_END - SKILL_BEGIN + 1 )
+#define MAX_SKILL_VAL                ( __SkillMaxValue )
+
+// Timeouts
+#define TIMEOUT_BEGIN                ( __TimeoutBegin )
+#define TIMEOUT_END                  ( __TimeoutEnd )
+#define TIMEOUT_COUNT                ( TIMEOUT_END - TIMEOUT_BEGIN + 1 )
+#define TB_BATTLE_TIMEOUT            ( 100000000 )
+#define TB_BATTLE_TIMEOUT_CHECK    # ( to ) ( ( to ) > 10000000 )
+
+// Kills
+#define KILL_BEGIN                   ( __KillBegin )
+#define KILL_END                     ( __KillEnd )
+#define KILL_COUNT                   ( KILL_END - KILL_BEGIN + 1 )
+
+// Perks
+#define PERK_BEGIN                   ( __PerkBegin )
+#define PERK_END                     ( __PerkEnd )
+#define PERK_COUNT                   ( PERK_END - PERK_BEGIN + 1 )
+
+// Addiction
+#define ADDICTION_BEGIN              ( __AddictionBegin )
+#define ADDICTION_END                ( __AddictionEnd )
+#define ADDICTION_COUNT              ( ADDICTION_END - ADDICTION_BEGIN + 1 )
+
+// Karma
+#define KARMA_BEGIN                  ( __KarmaBegin )
+#define KARMA_END                    ( __KarmaEnd )
+#define KARMA_COUNT                  ( KARMA_END - KARMA_BEGIN + 1 )
+
+// Damages
+#define DAMAGE_BEGIN                 ( __DamageBegin )
+#define DAMAGE_END                   ( __DamageEnd )
+#define DAMAGE_COUNT                 ( DAMAGE_END - DAMAGE_BEGIN + 1 )
+
+// Traits
+#define TRAIT_BEGIN                  ( __TraitBegin )
+#define TRAIT_END                    ( __TraitEnd )
+#define TRAIT_COUNT                  ( TRAIT_END - TRAIT_BEGIN + 1 )
+
+// Reputation
+#define REPUTATION_BEGIN             ( __ReputationBegin )
+#define REPUTATION_END               ( __ReputationEnd )
+#define REPUTATION_COUNT             ( REPUTATION_END - REPUTATION_BEGIN + 1 )
+
+// Generic
+#define WORLD_START_TIME             "07:00 30:10:2246 x00"
+#define MAX_FOPATH                   ( 1024 )
+#define LEXEMS_SIZE                  ( 128 )
+#define MAX_HOLO_INFO                ( 250 )
+#define AMBIENT_SOUND_TIME           ( 60000 )
+#define ABC_SIZE                     ( 26 )
+#define DIRS_COUNT                   ( __MapHexagonal ? 6 : 8 )
+#define IS_DIR_CORNER              # ( dir )         ( ( ( dir ) & 1 ) != 0 ) // 1, 3, 5, 7
+
+// Script pragma bindfield sizes
+#define PROTO_ITEM_USER_DATA_SIZE    ( 500 )
+#define CRITTER_USER_DATA_SIZE       ( 400 )
+
+// Critters
+#define GENDER_MALE                  ( 0 )
+#define GENDER_FEMALE                ( 1 )
+#define GENDER_IT                    ( 2 )
+#define AGE_MAX                      ( 60 )
+#define AGE_MIN                      ( 14 )
+#define AGGRESSOR_TICK               ( 60000 )
+#define MAX_ENEMY_STACK              ( 30 )
+#define MAX_STORED_IP                ( 20 )
+
+// Items
+#define MAX_ADDED_NOGROUP_ITEMS      ( 30 )
+#define ITEM_SLOT_BEGIN              ( 1000 )
+#define ITEM_SLOT_END                ( 1099 )
+#define ITEM_DEF_SLOT                ( 1000 )
+#define ITEM_DEF_ARMOR               ( 1100 )
+#define UNARMED_PUNCH                ( 1000 )
+#define UNARMED_KICK                 ( 1020 )
+
+// SceneryCl flags
+#define SCEN_CAN_USE                 ( 0x01 )
+#define SCEN_CAN_TALK                ( 0x02 )
+
+// Maps
+#define TIME_CAN_FOLLOW_GM           ( 20000 ) // Can less than Map timeout
+
+// Critter find types
+#define FIND_LIFE                    ( 0x01 )
+#define FIND_KO                      ( 0x02 )
+#define FIND_DEAD                    ( 0x04 )
+#define FIND_ONLY_PLAYERS            ( 0x10 )
+#define FIND_ONLY_NPC                ( 0x20 )
+#define FIND_ALL                     ( 0x0F )
+
+// Proto maps
+#define MAP_PROTO_EXT                ".fomap"
+#define MAX_PROTO_MAPS               ( 30000 )
+
+// Say types
+#define SAY_NORM                     ( 1 )
+#define SAY_NORM_ON_HEAD             ( 2 )
+#define SAY_SHOUT                    ( 3 )
+#define SAY_SHOUT_ON_HEAD            ( 4 )
+#define SAY_EMOTE                    ( 5 )
+#define SAY_EMOTE_ON_HEAD            ( 6 )
+#define SAY_WHISP                    ( 7 )
+#define SAY_WHISP_ON_HEAD            ( 8 )
+#define SAY_SOCIAL                   ( 9 )
+#define SAY_RADIO                    ( 10 )
+#define SAY_NETMSG                   ( 11 )
+#define SAY_DIALOG                   ( 12 )
+#define SAY_APPEND                   ( 13 )
+#define SAY_ENCOUNTER_ANY            ( 14 )
+#define SAY_ENCOUNTER_RT             ( 15 )
+#define SAY_ENCOUNTER_TB             ( 16 )
+#define SAY_FIX_RESULT               ( 17 )
+#define SAY_DIALOGBOX_TEXT           ( 18 )
+#define SAY_DIALOGBOX_BUTTON( b )             ( 19 + ( b ) ) // Max 20 buttons (0..19)
+#define SAY_SAY_TITLE                ( 39 )
+#define SAY_SAY_TEXT                 ( 40 )
+#define SAY_FLASH_WINDOW             ( 41 )
+#define MAX_DLGBOX_BUTTONS           ( 20 )
+
+// Transfer types
+#define TRANSFER_CLOSE               ( 0 )
+#define TRANSFER_HEX_CONT_UP         ( 1 )
+#define TRANSFER_HEX_CONT_DOWN       ( 2 )
+#define TRANSFER_SELF_CONT           ( 3 )
+#define TRANSFER_CRIT_LOOT           ( 4 )
+#define TRANSFER_CRIT_STEAL          ( 5 )
+#define TRANSFER_CRIT_BARTER         ( 6 )
+#define TRANSFER_FAR_CONT            ( 7 )
+#define TRANSFER_FAR_CRIT            ( 8 )
+
+// Take flags
+#define CONT_GET                     ( 1 )
+#define CONT_PUT                     ( 2 )
+#define CONT_GETALL                  ( 3 )
+#define CONT_PUTALL                  ( 4 )
+
+// Target types
+#define TARGET_SELF                  ( 0 )
+#define TARGET_SELF_ITEM             ( 1 )
+#define TARGET_CRITTER               ( 2 )
+#define TARGET_ITEM                  ( 3 )
+#define TARGET_SCENERY               ( 4 )
+#define TARGET_HEX                   ( 5 ) // Todo:
+
+// Pick types
+#define PICK_CRIT_LOOT               ( 0 )
+#define PICK_CRIT_PUSH               ( 1 )
+
+// Critters
+#define CRITTER_INV_VOLUME           ( 1000 )
+
+// Hit locations
+#define HIT_LOCATION_NONE            ( 0 )
+#define HIT_LOCATION_HEAD            ( 1 )
+#define HIT_LOCATION_LEFT_ARM        ( 2 )
+#define HIT_LOCATION_RIGHT_ARM       ( 3 )
+#define HIT_LOCATION_TORSO           ( 4 )
+#define HIT_LOCATION_RIGHT_LEG       ( 5 )
+#define HIT_LOCATION_LEFT_LEG        ( 6 )
+#define HIT_LOCATION_EYES            ( 7 )
+#define HIT_LOCATION_GROIN           ( 8 )
+#define HIT_LOCATION_UNCALLED        ( 9 )
+#define MAX_HIT_LOCATION             ( 10 )
+
+// Locations
+#define MAX_PROTO_LOCATIONS          ( 30000 )
+
+// Global map
+#define GM_MAXX                      ( __GlobalMapWidth * __GlobalMapZoneLength )
+#define GM_MAXY                      ( __GlobalMapHeight * __GlobalMapZoneLength )
+#define GM_ZONE_LEN                  ( __GlobalMapZoneLength ) // Can be multiple to GM_MAXX and GM_MAXY
+#define GM__MAXZONEX                 ( 100 )
+#define GM__MAXZONEY                 ( 100 )
+#define GM_ZONES_FOG_SIZE            ( ( ( GM__MAXZONEX / 4 ) + ( ( GM__MAXZONEX % 4 ) ? 1 : 0 ) ) * GM__MAXZONEY )
+#define GM_FOG_FULL                  ( 0 )
+#define GM_FOG_HALF                  ( 1 )
+#define GM_FOG_HALF_EX               ( 2 )
+#define GM_FOG_NONE                  ( 3 )
+#define GM_MAX_GROUP_COUNT           ( __GlobalMapMaxGroupCount )
+#define GM_ANSWER_WAIT_TIME          ( 20000 )
+#define GM_LIGHT_TIME                ( 5000 )
+#define GM_ZONE                    # ( x ) ( ( x ) / GM_ZONE_LEN )
+#define GM_ENTRANCES_SEND_TIME       ( 60000 )
+#define GM_TRACE_TIME                ( 1000 )
+
+// Follow
+#define FOLLOW_DIST                  ( 10 )
+#define FOLLOW_FORCE                 ( 1 )
+#define FOLLOW_PREP                  ( 2 )
+
+// GM Info
+#define GM_INFO_LOCATIONS            ( 0x01 )
+#define GM_INFO_CRITTERS             ( 0x02 )
+#define GM_INFO_GROUP_PARAM          ( 0x04 )
+#define GM_INFO_ZONES_FOG            ( 0x08 )
+#define GM_INFO_ALL                  ( 0x0F )
+#define GM_INFO_FOG                  ( 0x10 )
+#define GM_INFO_LOCATION             ( 0x20 )
+
+// Global process types
+#define GLOBAL_PROCESS_MOVE          ( 0 )
+#define GLOBAL_PROCESS_ENTER         ( 1 )
+#define GLOBAL_PROCESS_START_FAST    ( 2 )
+#define GLOBAL_PROCESS_START         ( 3 )
+#define GLOBAL_PROCESS_SET_MOVE      ( 4 )
+#define GLOBAL_PROCESS_STOPPED       ( 5 )
+#define GLOBAL_PROCESS_NPC_IDLE      ( 6 )
+#define GLOBAL_PROCESS_KICK          ( 7 )
+
+// GM Rule command
+#define GM_CMD_SETMOVE               ( 1 ) // +r-a*x,y
+#define GM_CMD_STOP                  ( 2 ) // +r-a
+#define GM_CMD_TOLOCAL               ( 3 ) // +r-a*num_city,num_map
+#define GM_CMD_KICKCRIT              ( 4 ) // +r-a*cr_id
+#define GM_CMD_FOLLOW_CRIT           ( 5 ) // +r+a*cr_id
+#define GM_CMD_FOLLOW                ( 6 )
+#define GM_CMD_GIVE_RULE             ( 7 )
+#define GM_CMD_ANSWER                ( 8 )
+#define GM_CMD_ENTRANCES             ( 9 )
+#define GM_CMD_VIEW_MAP              ( 10 )
+
+// GM Walk types
+#define GM_WALK_GROUND               ( 0 )
+#define GM_WALK_FLY                  ( 1 )
+#define GM_WALK_WATER                ( 2 )
+
+// Flags Hex
+// Proto map
+#define FH_BLOCK                     BIN8( 00000001 )
+#define FH_NOTRAKE                   BIN8( 00000010 )
+#define FH_WALL                      BIN8( 00000100 )
+#define FH_SCEN                      BIN8( 00001000 )
+#define FH_SCEN_GRID                 BIN8( 00010000 )
+#define FH_TRIGGER                   BIN8( 00100000 )
+// Map copy
+#define FH_CRITTER                   BIN8( 00000001 )
+#define FH_DEAD_CRITTER              BIN8( 00000010 )
+#define FH_ITEM                      BIN8( 00000100 )
+#define FH_DOOR                      BIN8( 00001000 )
+#define FH_BLOCK_ITEM                BIN8( 00010000 )
+#define FH_NRAKE_ITEM                BIN8( 00100000 )
+#define FH_WALK_ITEM                 BIN8( 01000000 )
+#define FH_GAG_ITEM                  BIN8( 10000000 )
+
+#define FH_NOWAY                     BIN16( 00010001, 00000001 )
+#define FH_NOSHOOT                   BIN16( 00100000, 00000010 )
+
+// Client map
+#define SERVER_MAP_EXT               ".map"
+#define CLIENT_MAP_FORMAT_VER        ( 7 )
+
+// Coordinates
+#define MAXHEX_DEF                   ( 200 )
+#define MAXHEX_MIN                   ( 10 )
+#define MAXHEX_MAX                   ( 10000 )
+
+// Client parameters
+#define MAX_NAME                     ( 30 )
+#define MIN_NAME                     ( 1 )
+#define MAX_CHAT_MESSAGE             ( 75 )
+#define MAX_SAY_NPC_TEXT             ( 25 )
+#define MAX_SCENERY                  ( 5000 )
+#define MAX_DLG_LEN_IN_BYTES         ( 64 * 1024 )
+#define MAX_DLG_LEXEMS_TEXT          ( 1000 )
+#define MAX_BUF_LEN                  ( 4096 )
+#define PASS_HASH_SIZE               ( 32 )
+
+// Critters
+#define MAX_CRIT_TYPES               ( 1000 )
+#define NPC_START_ID                 ( 5000001 )
+#define USERS_START_ID               ( 1 )
+#define IS_USER_ID                 # ( id ) ( ( id ) > 0 && ( id ) < NPC_START_ID )
+#define IS_NPC_ID                  # ( id ) ( ( id ) >= NPC_START_ID )
+#define MAX_ANSWERS                  ( 100 )
+#define PROCESS_TALK_TICK            ( 1000 )
+#define DIALOGS_LST_NAME             "dialogs.lst"
+#define MAX_SCRIPT_NAME              ( 64 )
+#define SCRIPTS_LST                  "scripts.cfg"
+#define MAX_START_SPECIAL            ( 40 )
+#define TURN_BASED_TIMEOUT           ( 1000 )
+#define MIN_VISIBLE_CRIT             ( 6 )
+#define FADING_PERIOD                ( 1000 )
+
+#define RESPOWN_TIME_PLAYER          ( 3 )
+#define RESPOWN_TIME_NPC             ( 120 )
+#define RESPOWN_TIME_INFINITY        ( 4 * 24 * 60 * 60000 )
+
+// Combat modes
+#define COMBAT_MODE_ANY              ( 0 )
+#define COMBAT_MODE_REAL_TIME        ( 1 )
+#define COMBAT_MODE_TURN_BASED       ( 2 )
+
+// Turn based
+#define COMBAT_TB_END_TURN           ( 0 )
+#define COMBAT_TB_END_COMBAT         ( 1 )
+
+// Answer
+#define ANSWER_BEGIN                 ( 0xF0 )
+#define ANSWER_END                   ( 0xF1 )
+#define ANSWER_BARTER                ( 0xF2 )
+
+// Time AP
+#define AP_DIVIDER                   ( 100 )
+
+// Crit conditions
+#define COND_LIFE                    ( 1 )
+#define COND_KNOCKOUT                ( 2 )
+#define COND_DEAD                    ( 3 )
+
+// Run-time critters flags
+#define FCRIT_PLAYER                 ( 0x00010000 ) // Player
+#define FCRIT_NPC                    ( 0x00020000 ) // Npc
+#define FCRIT_DISCONNECT             ( 0x00080000 ) // In offline
+#define FCRIT_CHOSEN                 ( 0x00100000 ) // Chosen
+#define FCRIT_RULEGROUP              ( 0x00200000 ) // Group rule
+
+// Players barter
+#define BARTER_DIST                  ( 1 )
+// Types
+#define BARTER_TRY                   ( 0 ) // opponentId, isHide
+#define BARTER_ACCEPTED              ( 1 ) // opponentId, isHide
+#define BARTER_BEGIN                 ( 2 )
+#define BARTER_END                   ( 3 )
+#define BARTER_SET_SELF              ( 4 )
+#define BARTER_SET_OPPONENT          ( 5 )
+#define BARTER_UNSET_SELF            ( 6 )
+#define BARTER_UNSET_OPPONENT        ( 7 )
+#define BARTER_OFFER                 ( 8 ) // isSet, isOpponent
+#define BARTER_REFRESH               ( 9 )
+
+// Scores
+#define SCORE_SPEAKER                ( 3 )
+#define SCORE_TRADER                 ( 4 )
+#define SCORES_MAX                   ( 50 )
+#define SCORES_SEND_TIME             ( 60000 )
+#define SCORE_NAME_LEN               ( 64 )
+
+// Show screen modes
+// Ouput: it is 'uint param' in Critter::ShowScreen.
+// Input: I - integer value 'uint answerI', S - string value 'string& answerS' in 'answer_' function.
+#define SHOW_SCREEN_CLOSE            ( 0 )    // Close top window.
+#define SHOW_SCREEN_TIMER            ( 1 )    // Timer box. Output: picture index in INVEN.LST. Input I: time in game minutes (1..599).
+#define SHOW_SCREEN_DIALOGBOX        ( 2 )    // Dialog box. Output: buttons count - 0..20 (exit button added automatically). Input I: Choosed button - 0..19.
+#define SHOW_SCREEN_SKILLBOX         ( 3 )    // Skill box. Input I: selected skill.
+#define SHOW_SCREEN_BAG              ( 4 )    // Bag box. Input I: id of selected item.
+#define SHOW_SCREEN_SAY              ( 5 )    // Say box. Output: all symbols - 0 or only numbers - any other number. Input S: typed string.
+#define SHOW_ELEVATOR                ( 6 )    // Elevator. Output: look ELEVATOR_* macro. Input I: Choosed level button.
+#define SHOW_SCREEN_INVENTORY        ( 7 )    // Inventory.
+#define SHOW_SCREEN_CHARACTER        ( 8 )    // Character.
+#define SHOW_SCREEN_FIXBOY           ( 9 )    // Fix-boy.
+#define SHOW_SCREEN_PIPBOY           ( 10 )   // Pip-boy.
+#define SHOW_SCREEN_MINIMAP          ( 11 )   // Mini-map.
+
+// Parameters
+#define MAX_PARAMS                   ( 1000 )
+#define SKILL_OFFSET               # ( skill ) ( ( skill ) - ( __AbsoluteOffsets ? 0 : SKILL_BEGIN ) )
+#define PERK_OFFSET                # ( perk ) ( ( perk ) - ( __AbsoluteOffsets ? 0 : PERK_BEGIN ) )
+
+// Special send params
+#define OTHER_BREAK_TIME             ( 0 + MAX_PARAMS )
+#define OTHER_WAIT_TIME              ( 1 + MAX_PARAMS )
+#define OTHER_FLAGS                  ( 2 + MAX_PARAMS )
+#define OTHER_BASE_TYPE              ( 3 + MAX_PARAMS )
+#define OTHER_MULTIHEX               ( 4 + MAX_PARAMS )
+#define OTHER_YOU_TURN               ( 5 + MAX_PARAMS )
+#define OTHER_CLEAR_MAP              ( 6 + MAX_PARAMS )
+#define OTHER_TELEPORT               ( 7 + MAX_PARAMS )
+
+// Critter actions
+// Flags for chosen:
+// l - hardcoded local call
+// s - hardcoded server call
+// for all others critters actions call only server
+//                                          flags    actionExt                                                      item
+#define ACTION_MOVE                  ( 0 )  // l
+#define ACTION_RUN                   ( 1 )  // l
+#define ACTION_MOVE_ITEM             ( 2 )  // l s      from slot                                                      +
+#define ACTION_MOVE_ITEM_SWAP        ( 3 )  // l s      from slot                                                      +
+#define ACTION_USE_ITEM              ( 4 )  // l s                                                                     +
+#define ACTION_DROP_ITEM             ( 5 )  // l s      from slot                                                      +
+#define ACTION_USE_WEAPON            ( 6 )  // l        fail attack 8 bit, use index (0-2) 4-7 bits, aim 0-3 bits      +
+#define ACTION_RELOAD_WEAPON         ( 7 )  // l s                                                                     +
+#define ACTION_USE_SKILL             ( 8 )  // l s      skill index (see SK_*)
+#define ACTION_PICK_ITEM             ( 9 )  // l s                                                                     +
+#define ACTION_PICK_CRITTER          ( 10 ) // l        0 - loot, 1 - steal, 2 - push
+#define ACTION_OPERATE_CONTAINER     ( 11 ) // l s      transfer type * 10 + [0 - get, 1 - get all, 2 - put]           + (exclude get all)
+#define ACTION_BARTER                ( 12 ) //   s      0 - item taken, 1 - item given                                 +
+#define ACTION_DODGE                 ( 13 ) //          0 - front, 1 - back
+#define ACTION_DAMAGE                ( 14 ) //          0 - front, 1 - back
+#define ACTION_DAMAGE_FORCE          ( 15 ) //          0 - front, 1 - back
+#define ACTION_KNOCKOUT              ( 16 ) //   s      0 - knockout anim2begin
+#define ACTION_STANDUP               ( 17 ) //   s      0 - knockout anim2end
+#define ACTION_FIDGET                ( 18 ) // l
+#define ACTION_DEAD                  ( 19 ) //   s      dead type anim2 (see Anim2 in _animation.fos)
+#define ACTION_CONNECT               ( 20 ) //
+#define ACTION_DISCONNECT            ( 21 ) //
+#define ACTION_RESPAWN               ( 22 ) //   s
+#define ACTION_REFRESH               ( 23 ) //   s
+
+// Script defines
+
+// In SendMessage
+#define MESSAGE_TO_VISIBLE_ME        ( 0 )
+#define MESSAGE_TO_IAM_VISIBLE       ( 1 )
+#define MESSAGE_TO_ALL_ON_MAP        ( 2 )
+
+// Special skill values
+#define SKILL_PICK_ON_GROUND         ( -1 )
+#define SKILL_PUT_CONT               ( -2 )
+#define SKILL_TAKE_CONT              ( -3 )
+#define SKILL_TAKE_ALL_CONT          ( -4 )
+#define SKILL_LOOT_CRITTER           ( -5 )
+#define SKILL_PUSH_CRITTER           ( -6 )
+#define SKILL_TALK                   ( -7 )
+
+// Move params
+// 6 next steps (each 5 bit) + stop bit + run bit
+// Step bits: 012 - dir, 3 - allow, 4 - disallow
+#define MOVE_PARAM_STEP_COUNT        ( 6 )
+#define MOVE_PARAM_STEP_BITS         ( 5 )
+#define MOVE_PARAM_STEP_DIR          ( 0x7 )
+#define MOVE_PARAM_STEP_ALLOW        ( 0x8 )
+#define MOVE_PARAM_STEP_DISALLOW     ( 0x10 )
+#define MOVE_PARAM_RUN               ( 0x80000000 )
+
+// Holodisks
+#define USER_HOLO_TEXTMSG_FILE       "FOHOLOEXT.MSG"
+#define USER_HOLO_START_NUM          ( 100000 )
+#define USER_HOLO_MAX_TITLE_LEN      ( 40 )
+#define USER_HOLO_MAX_LEN            ( 2000 )
+
+// IndicatorType
+#define INDICATOR_LINES      ( 0 )
+#define INDICATOR_NUMBERS    ( 1 )
+#define INDICATOR_BOTH       ( 2 )
+
+// Constants
+#define CONSTANTS_PARAM      ( 0 )
+#define CONSTANTS_ITEM       ( 1 )
+#define CONSTANTS_DEFINE     ( 2 )
+#define CONSTANTS_PICTURE    ( 3 )
+#define CONSTANTS_HASH       ( 4 )
+
+#define DESC_INVENTORY_MAIN       ( 0 )
+#define DESC_INVENTORY_SPECIAL    ( 1 )
+#define DESC_INVENTORY_STATS      ( 2 )
+#define DESC_INVENTORY_RESIST     ( 3 )
+
+#define CRITTER_ONLY_NAME         ( 0 )
+#define CRITTER_LOOK_SHORT        ( 1 )
+#define CRITTER_LOOK_FULL         ( 2 )
+
+#define ITEM_LOOK_DEFAULT         ( 0 )
+#define ITEM_LOOK_ONLY_NAME       ( 1 )
+#define ITEM_LOOK_MAP             ( 2 )
+#define ITEM_LOOK_BARTER          ( 3 )
+#define ITEM_LOOK_INVENTORY       ( 4 )
+#define ITEM_LOOK_WM_CAR          ( 5 )
+
+#define BAGS_FILE_NAME               "Bags.cfg"
+#define MAX_NPC_BAGS                 ( 50 )
+#define MAX_NPC_BAGS_PACKS           ( 20 )
+#define NPC_GO_HOME_WAIT_TICK        ( Random( 4000, 6000 ) )
+
+#define AI_PLANE_MISC                ( 0 )
+#define AI_PLANE_ATTACK              ( 1 )
+#define AI_PLANE_WALK                ( 2 )
+#define AI_PLANE_PICK                ( 3 )
+#define AI_PLANE_PATROL              ( 4 )
+#define AI_PLANE_COURIER             ( 5 )
+
+#define AI_PLANE_MISC_PRIORITY       ( 10 )
+#define AI_PLANE_ATTACK_PRIORITY     ( 50 )
+#define AI_PLANE_WALK_PRIORITY       ( 20 )
+#define AI_PLANE_PICK_PRIORITY       ( 35 )
+#define AI_PLANE_PATROL_PRIORITY     ( 25 )
+#define AI_PLANE_COURIER_PRIORITY    ( 30 )
+
+// Plane begin/end/run reasons
+// Begin
+#define REASON_GO_HOME                 ( 10 )
+#define REASON_FOUND_IN_ENEMY_STACK    ( 11 )
+#define REASON_FROM_DIALOG             ( 12 )
+#define REASON_FROM_SCRIPT             ( 13 )
+#define REASON_RUN_AWAY                ( 14 )
+// End
+#define REASON_SUCCESS                 ( 30 )
+#define REASON_HEX_TOO_FAR             ( 31 )
+#define REASON_HEX_BUSY                ( 32 )
+#define REASON_HEX_BUSY_RING           ( 33 )
+#define REASON_DEADLOCK                ( 34 )
+#define REASON_TRACE_FAIL              ( 35 )
+#define REASON_POSITION_NOT_FOUND      ( 36 )
+#define REASON_FIND_PATH_ERROR         ( 37 )
+#define REASON_CANT_WALK               ( 38 )
+#define REASON_TARGET_DISAPPEARED      ( 39 )
+#define REASON_USE_ITEM_NOT_FOUND      ( 40 )
+#define REASON_GAG_CRITTER             ( 41 )
+#define REASON_GAG_ITEM                ( 42 )
+#define REASON_NO_UNARMED              ( 43 )
+// Run
+#define REASON_ATTACK_TARGET           ( 50 )
+#define REASON_ATTACK_WEAPON           ( 51 )
+#define REASON_ATTACK_DISTANTION       ( 52 )
+#define REASON_ATTACK_USE_AIM          ( 53 )
+
+// Critter Events
+#define CRITTER_EVENT_IDLE                       ( 0 )
+#define CRITTER_EVENT_FINISH                     ( 1 )
+#define CRITTER_EVENT_DEAD                       ( 2 )
+#define CRITTER_EVENT_RESPAWN                    ( 3 )
+#define CRITTER_EVENT_SHOW_CRITTER               ( 4 )
+#define CRITTER_EVENT_SHOW_CRITTER_1             ( 5 )
+#define CRITTER_EVENT_SHOW_CRITTER_2             ( 6 )
+#define CRITTER_EVENT_SHOW_CRITTER_3             ( 7 )
+#define CRITTER_EVENT_HIDE_CRITTER               ( 8 )
+#define CRITTER_EVENT_HIDE_CRITTER_1             ( 9 )
+#define CRITTER_EVENT_HIDE_CRITTER_2             ( 10 )
+#define CRITTER_EVENT_HIDE_CRITTER_3             ( 11 )
+#define CRITTER_EVENT_SHOW_ITEM_ON_MAP           ( 12 )
+#define CRITTER_EVENT_CHANGE_ITEM_ON_MAP         ( 13 )
+#define CRITTER_EVENT_HIDE_ITEM_ON_MAP           ( 14 )
+#define CRITTER_EVENT_ATTACK                     ( 15 )
+#define CRITTER_EVENT_ATTACKED                   ( 16 )
+#define CRITTER_EVENT_STEALING                   ( 17 )
+#define CRITTER_EVENT_MESSAGE                    ( 18 )
+#define CRITTER_EVENT_USE_ITEM                   ( 19 )
+#define CRITTER_EVENT_USE_ITEM_ON_ME             ( 20 )
+#define CRITTER_EVENT_USE_SKILL                  ( 21 )
+#define CRITTER_EVENT_USE_SKILL_ON_ME            ( 22 )
+#define CRITTER_EVENT_DROP_ITEM                  ( 23 )
+#define CRITTER_EVENT_MOVE_ITEM                  ( 24 )
+#define CRITTER_EVENT_KNOCKOUT                   ( 25 )
+#define CRITTER_EVENT_SMTH_DEAD                  ( 26 )
+#define CRITTER_EVENT_SMTH_STEALING              ( 27 )
+#define CRITTER_EVENT_SMTH_ATTACK                ( 28 )
+#define CRITTER_EVENT_SMTH_ATTACKED              ( 29 )
+#define CRITTER_EVENT_SMTH_USE_ITEM              ( 30 )
+#define CRITTER_EVENT_SMTH_USE_SKILL             ( 31 )
+#define CRITTER_EVENT_SMTH_DROP_ITEM             ( 32 )
+#define CRITTER_EVENT_SMTH_MOVE_ITEM             ( 33 )
+#define CRITTER_EVENT_SMTH_KNOCKOUT              ( 34 )
+#define CRITTER_EVENT_PLANE_BEGIN                ( 35 )
+#define CRITTER_EVENT_PLANE_END                  ( 36 )
+#define CRITTER_EVENT_PLANE_RUN                  ( 37 )
+#define CRITTER_EVENT_BARTER                     ( 38 )
+#define CRITTER_EVENT_TALK                       ( 39 )
+#define CRITTER_EVENT_GLOBAL_PROCESS             ( 40 )
+#define CRITTER_EVENT_GLOBAL_INVITE              ( 41 )
+#define CRITTER_EVENT_TURN_BASED_PROCESS         ( 42 )
+#define CRITTER_EVENT_SMTH_TURN_BASED_PROCESS    ( 43 )
+#define CRITTER_EVENT_MAX                        ( 44 )
+
+#endif // ENGINE_DEFINES_H
